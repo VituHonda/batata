@@ -104,7 +104,7 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 	}
 
 	@Override
-	public Usuario buscar(int id) throws DBException {
+	public Usuario buscar(int id) {
 
 		Usuario usuario = null;
 		PreparedStatement stmt = null;
@@ -113,25 +113,40 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "";
+			String sql = "SELECT * FROM USUARIOS WHERE id_usuario = ?";
+			stmt = conexao.prepareStatement(sql);
 			stmt.setInt(1, id);
 
-			stmt.executeQuery();
+			rs = stmt.executeQuery();
 
 			if (rs.next()) {
+				int codigo_usuario = rs.getInt("id_usuario");
+				String nome_usuario = rs.getString("nome_usuario");
+				String email_usuario = rs.getString("email_usuario");
+				String senha_usuario = rs.getString("senha_usuario");
+
+				usuario = new Usuario(nome_usuario, email_usuario, senha_usuario);
+				usuario.setIdUsuario(codigo_usuario);
 
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new DBException("Erro ao buscar.");
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 
 		return usuario;
 	}
 
 	@Override
-	public List<Usuario> listar() throws DBException {
+	public List<Usuario> listar() {
 
 		List<Usuario> lista = new ArrayList<Usuario>();
 		PreparedStatement stmt = null;
@@ -142,15 +157,30 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 			conexao = ConnectionManager.getInstance().getConnection();
 			String sql = "SELECT * FROM USUARIOS";
 			stmt = conexao.prepareStatement(sql);
-			stmt.executeQuery();
-			
-			if(rs.next()) {
+			rs = stmt.executeQuery();
+			while(rs.next()) {
 				
+				int codigo_usuario = rs.getInt("id_usuario");
+				String nome_usuario = rs.getString("nome_usuario");
+				String email_usuario = rs.getString("email_usuario");
+				String senha_usuario = rs.getString("senha_usuario");
+
+				Usuario usuario = new Usuario(nome_usuario, email_usuario, senha_usuario);
+				usuario.setIdUsuario(codigo_usuario);
+				
+				lista.add(usuario);
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new DBException("Erro ao listar.");
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 
 		return lista;

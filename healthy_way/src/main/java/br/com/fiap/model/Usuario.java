@@ -52,6 +52,22 @@ public class Usuario {
 	public void setSenhaUsuario(String senhaUsuario) {
 		this.senhaUsuario = senhaUsuario;
 	}
+
+	public List<UsuarioTelefone> getUsuarioTelefones() {
+		return usuarioTelefones;
+	}
+
+	public void setUsuarioTelefones(List<UsuarioTelefone> usuarioTelefones) {
+		this.usuarioTelefones = usuarioTelefones;
+	}
+
+	public List<UsuarioEndereco> getUsuarioEnderecos() {
+		return usuarioEnderecos;
+	}
+
+	public void setUsuarioEnderecos(List<UsuarioEndereco> usuarioEnderecos) {
+		this.usuarioEnderecos = usuarioEnderecos;
+	}
 	
 }
 
