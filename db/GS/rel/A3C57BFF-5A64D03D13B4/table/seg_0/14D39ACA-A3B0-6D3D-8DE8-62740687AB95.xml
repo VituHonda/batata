@@ -19,6 +19,19 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="nome_clinica" id="8F510E45-4FBD-DF5A-410C-BF7CBE1E69AF">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-15 12:00:09 UTC</createdTime>
+<generatorID>9AE78D16-966C-30AD-5F61-7226D08975A2</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="990AE2B4-4011-877A-C100-B0E66CBCDC9E" name="CLINICA_PK">
