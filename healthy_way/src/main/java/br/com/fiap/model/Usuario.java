@@ -1,5 +1,7 @@
 package br.com.fiap.model;
 
+import java.util.ArrayList;
+
 public class Usuario {
 	
 	private int idUsuario;
