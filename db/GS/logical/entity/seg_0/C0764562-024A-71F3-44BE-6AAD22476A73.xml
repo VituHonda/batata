@@ -14,4 +14,46 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_exame" id="A2771620-38E9-5068-7630-F7AD87C91F87">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:30:15 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_exame" id="411850BC-5B9B-DA2F-5747-7BA3BE56CD3A">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:30:52 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D0DB2247-3982-BBDC-3BB2-3D5EB5C8B480" name="EXAMES PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:50:09 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A2771620-38E9-5068-7630-F7AD87C91F87</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

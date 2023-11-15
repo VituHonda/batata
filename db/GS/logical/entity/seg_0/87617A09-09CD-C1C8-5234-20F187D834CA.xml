@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="87617A09-09CD-C1C8-5234-20F187D834CA" name="CLINICA_TELEFONES">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:36:06 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_clinica_telefone" id="32813B4D-F57D-9C0F-E34F-214B2744CC9C">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:38:24 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefone_clinica" id="A21FDC1D-5A9C-015A-5FD7-8DFA237A96BA">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:38:30 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_clinica" id="387B9C40-2FC1-E062-F28B-3561F1BCEA65">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:50:34 UTC</createdTime>
+<generatorID>49688C6A-2499-3221-6DB7-17E5AB1C43E0</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<referedAttribute>D0083B0C-1317-DE88-464E-266FF240B38E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3301D149-A217-9A37-8560-2B150400E5EE" name="CLINICA_TELEFONES PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:50:43 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>32813B4D-F57D-9C0F-E34F-214B2744CC9C</newElementsIDs>
+<usedAttributes>
+<attributeRef>32813B4D-F57D-9C0F-E34F-214B2744CC9C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

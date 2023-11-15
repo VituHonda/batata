@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B36EB3EB-4AE0-F2BA-E13B-C3359CF9740A" name="USUARIO_ENDERECOS">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>196E24C6-28D1-B349-24A2-A47F5106F32E</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_usuario_endereco" id="5196098A-46A6-7589-9F78-54067A042769">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>CBC5DD2C-3969-C475-070D-3AC6732948AE</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rua_usuario" id="E42539EE-9495-AD7C-C304-D155AD4343DD">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>1109954F-0A18-AC18-E0A5-00A5614EACCE</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado_usuario" id="98A4D9BC-023D-41E2-8181-4922C42B4D00">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>6B809592-263D-F946-449E-7415953E2FB6</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero_usuario" id="CB1811FC-4534-0DA7-3438-E9F794ECA07D">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>4C19E243-E47F-A283-EC7A-3A41980FFB7D</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cep_usuario" id="B353BEF7-8149-3561-A0E3-6F0CDEA2565A">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>C1B5D821-7F62-86FD-8DFC-9ED06E3FC328</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USUARIOS_id_usuario" id="D18A45D1-51EE-4796-191C-E93FF5CE209C">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>943E2EE1-A346-E1C3-BD4F-4D6B1E7922D5</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B80E2353-0730-F0F2-51D1-22099C76C1C9" referredColumn="5A3CD6F0-DBF8-6FE6-6142-96C3C6971A06"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6016EEEE-472C-4569-87FB-ECD1C9910762" name="USUARIO_ENDERECOS_PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>E85B3818-5818-5EFB-5315-6328F1558865</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5196098A-46A6-7589-9F78-54067A042769"/>
+<colUsage columnID="D18A45D1-51EE-4796-191C-E93FF5CE209C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A8DF7B6E-7510-59F5-EC82-E114CA6245FF" name="USUARIO_ENDERECOS_USUARIOS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>53F77D04-778C-A1B9-B87C-5A3A798428D1</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D18A45D1-51EE-4796-191C-E93FF5CE209C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

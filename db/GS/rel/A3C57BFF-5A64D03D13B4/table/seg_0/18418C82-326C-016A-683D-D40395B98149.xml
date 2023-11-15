@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="18418C82-326C-016A-683D-D40395B98149" name="AVALIACAO">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>A3016959-2865-9BF9-7216-7E74575EDB18</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_avaliacao" id="8A3CFE39-7CC2-ECDC-B611-31D5D87E1668">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>B964C42A-F6B6-B04D-0F03-828571C56756</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nota" id="8AD25970-0289-980A-EC0C-2073EE5C9D67">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>4223494F-AA92-7434-323F-E7D5BDDE8B38</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mensagem" id="B2B52D1F-8021-1B64-31AE-3A408CA930F4">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>0F1CB19E-8742-E265-3629-7FE1E1EDCAFD</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USUARIOS_id_usuario" id="3D01A25C-E6AF-7E39-C66F-E5419E5447CE">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>6FC9F5BA-721E-EE4D-4762-FD54D132718A</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3660B85A-9716-77EB-411B-B983133E4B5B" referredColumn="5A3CD6F0-DBF8-6FE6-6142-96C3C6971A06"/>
+</associations>
+</Column>
+<Column name="TECNOLOGIAS_id_tecnologia" id="9B50123F-1BCB-9A9D-0DD9-C6AAAD07C760">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>C0F87078-F4BE-A61A-6D86-FABA0A57829D</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3373BACE-A6E7-30EF-963C-7D41DB79A87F" referredColumn="BFCC2662-DCCA-DBB5-7FEF-47AF33132D7C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="59866C8A-1B51-1381-2CBA-957374D87E50" name="AVALIACAO_PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>2AC47190-E602-E605-8359-90ED0D9546A0</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8A3CFE39-7CC2-ECDC-B611-31D5D87E1668"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3DA8C92-B0E4-A767-90A3-26F5A8C85676" name="AVALIACAO_USUARIOS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>16A7708F-56EE-9C93-75F3-103F99D4C863</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D01A25C-E6AF-7E39-C66F-E5419E5447CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9786D793-2E36-2FF2-877F-DCAD852F4981" name="AVALIACAO_TECNOLOGIAS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>EE630F9F-34AB-C404-4763-D1E90C597637</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B50123F-1BCB-9A9D-0DD9-C6AAAD07C760"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

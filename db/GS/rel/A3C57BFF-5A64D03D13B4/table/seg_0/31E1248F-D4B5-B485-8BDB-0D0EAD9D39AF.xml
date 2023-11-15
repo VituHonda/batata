@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="31E1248F-D4B5-B485-8BDB-0D0EAD9D39AF" name="CLINICA_ENDERECOS">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>FA303B0B-9456-FBDE-3CD8-9013EF4E178E</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_clinica_endereco" id="AD51D1A7-4513-26BF-96AE-A5C8A5F2DA29">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>49562CB4-48AC-D347-32B6-F0421DC2A70D</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rua_clinica" id="405F3404-7F74-1DCC-B175-71817D323CA4">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>B1E56AE7-3644-4761-A6E9-B9256E29EEBD</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero_clinica" id="E46F2867-E400-A8FD-59F8-EC8BED400FAA">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>8F06026D-902D-10BD-32A3-807C3A69F0DE</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado_clinica" id="7A821617-4172-D8A3-BC8D-395FA6E7CC2D">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>107CEE14-BA43-A2A4-E538-E9B341B5D753</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cep_clinica" id="6788A651-DB59-3B07-ABC3-273665600EE0">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>70CDDEDF-9F48-B117-9177-68BF772BEAB5</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLINICA_id_clinica" id="A57A2BBB-4B30-02C8-3BF1-21FFDB97D7A6">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>38DE9066-3113-626E-1C66-EEAE7D861425</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="777F972E-D904-D4CB-5C3F-A3DBA86CF95F" referredColumn="4CA754E6-C724-B7D1-C680-4B71AE8F6912"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EAE168D4-94C7-9C7D-BD15-3A57F37B930B" name="CLINICA_ENDERECOS_PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>940DBD5A-BFFF-7C2A-1334-078D38FB5714</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD51D1A7-4513-26BF-96AE-A5C8A5F2DA29"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E41B951D-7CA5-1718-76CE-7F067D03666D" name="CLINICA_ENDERECOS_CLINICA_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>D1E16F3D-7894-ADBB-8DFF-5F6D67A60B1D</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A57A2BBB-4B30-02C8-3BF1-21FFDB97D7A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

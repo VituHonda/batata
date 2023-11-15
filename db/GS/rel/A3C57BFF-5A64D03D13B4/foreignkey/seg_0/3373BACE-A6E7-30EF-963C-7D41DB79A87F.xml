@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3373BACE-A6E7-30EF-963C-7D41DB79A87F" containerWithKeyObject="18418C82-326C-016A-683D-D40395B98149" localFKIndex="9786D793-2E36-2FF2-877F-DCAD852F4981" name="AVALIACAO_TECNOLOGIAS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>EE630F9F-34AB-C404-4763-D1E90C597637</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<referredTableLongName>TECNOLOGIAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>19792A4F-025C-898D-C671-2FBB97BCE286</referredTableID>
+<keyObject>06580294-C0CE-DC94-6FB0-F68564047980</keyObject>
+<referredKeyID>06580294-C0CE-DC94-6FB0-F68564047980</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_tecnologia</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -14,4 +14,88 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_avaliacao" id="B964C42A-F6B6-B04D-0F03-828571C56756">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:39:58 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nota" id="4223494F-AA92-7434-323F-E7D5BDDE8B38">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:14:34 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mensagem" id="0F1CB19E-8742-E265-3629-7FE1E1EDCAFD">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:14:38 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario" id="6FC9F5BA-721E-EE4D-4762-FD54D132718A">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:39:54 UTC</createdTime>
+<generatorID>16A7708F-56EE-9C93-75F3-103F99D4C863</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<referedAttribute>4276CB19-CE9B-318C-401C-FAEA3C122CCA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tecnologia" id="C0F87078-F4BE-A61A-6D86-FABA0A57829D">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:50:13 UTC</createdTime>
+<generatorID>EE630F9F-34AB-C404-4763-D1E90C597637</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<referedAttribute>C018DF3E-8F01-0C39-937A-ED41C27966E1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2AC47190-E602-E605-8359-90ED0D9546A0" name="AVALIACAO PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:40:07 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B964C42A-F6B6-B04D-0F03-828571C56756</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EF49E2D0-3F37-2E94-7A6B-CCD8CC28374B" name="uSUARIOS">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EF49E2D0-3F37-2E94-7A6B-CCD8CC28374B" name="USUARIOS">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-11-14 10:28:45 UTC</createdTime>
 <ownerDesignName>GS</ownerDesignName>
@@ -14,4 +14,75 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_usuario" id="4276CB19-CE9B-318C-401C-FAEA3C122CCA">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:00:13 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome_usuario" id="38935C21-1B50-18C5-7329-D3E79A5FCD13">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:00:23 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email_usuario" id="D2FCD397-9CD2-C887-630C-1E879665AB0D">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:00:30 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="senha_usuario" id="DC231F62-E62A-4FE4-726D-1631B591A685">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:00:33 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CDE8DA6E-2477-50D4-5C42-C3E8CEE0C800" name="USUARIOS PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:39:53 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4276CB19-CE9B-318C-401C-FAEA3C122CCA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

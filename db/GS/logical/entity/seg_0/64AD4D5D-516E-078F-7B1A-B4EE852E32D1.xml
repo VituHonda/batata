@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="64AD4D5D-516E-078F-7B1A-B4EE852E32D1" name="USUARIO_TELEFONES">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:36:54 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_usuario_telefone" id="36633743-9CC7-ECC3-4E9F-E413209CA0C6">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:39:15 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefone_usuario" id="6C62AC7D-D1B0-E745-1B9E-DCEA338169A0">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:39:23 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario" id="4492020E-0C4B-9BFE-F8A4-3DF4E7175058">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:39:54 UTC</createdTime>
+<generatorID>E7338AC8-8AEB-0ED1-B06D-97FED28F1662</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<referedAttribute>4276CB19-CE9B-318C-401C-FAEA3C122CCA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7BECCAAB-DFE5-56E1-97EF-12CBA6D1CBA1" name="USUARIO_TELEFONES PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:49:26 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>36633743-9CC7-ECC3-4E9F-E413209CA0C6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

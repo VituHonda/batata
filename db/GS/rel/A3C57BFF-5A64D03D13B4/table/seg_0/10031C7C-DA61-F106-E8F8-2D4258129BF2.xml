@@ -1,0 +1,170 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="10031C7C-DA61-F106-E8F8-2D4258129BF2" name="DADOS_BIOMETRICOS_USUARIO">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>8A66A690-6B8D-15EF-8AFA-2E03DD79A43E</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_dado_biometrico_usuario" id="F7EBD301-D5B7-6741-F293-3FB74370E865">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>34B66870-CB5D-75B2-2258-8380E5774183</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idade" id="37759D4E-0009-9EE8-0B3C-A2014A9BF09B">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>C2843126-DBD5-39BD-AFC9-69A10E4AEA69</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="altura" id="745727D1-77B1-431C-7B2E-4F291F771558">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>22A55CFA-EB81-63ED-561D-780AFE71E0FA</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="peso" id="D60C6C67-DA68-CA36-629D-1019672C7B60">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>50BE33E2-BD39-026F-58AE-408C5AF32203</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_sanguineo" id="17F9B418-6659-8351-D27A-0350F167CD91">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>C70B7F8F-CE86-BBD4-21D2-5C0954ACBEE3</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="convenio_medico" id="0FABD0F3-8E93-14BB-3718-164E6633C089">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>28B5C797-AB4D-37C6-56C5-4C1737A47951</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pressao_maior" id="BF9E4FAE-C652-FEC3-3034-687295AEDB39">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>D95EB228-51EF-46EF-6D38-0349591E584E</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pressao_menor" id="7A1EB4AB-114A-A9BA-0A09-6D4B010F081F">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>33E05C11-12EC-6D9D-BE67-86C73FCE6A96</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="genero" id="99EFD0A4-56D5-D16B-3639-0A4D762A3C49">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>92BAF4B8-A330-BC56-B02E-F68B887B7509</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USUARIOS_id_usuario" id="9C6406FA-950D-4794-110D-C8DEBE3DD402">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>86CB293B-4AFC-514A-28C1-E6E7851FD6F1</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E9B9C999-A871-48BB-A131-405761BAB84E" referredColumn="5A3CD6F0-DBF8-6FE6-6142-96C3C6971A06"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="70A3D9A2-1097-45B4-6DE2-F2A7F03800FB" name="DADOS_BIOMETRICOS_USUARIO_PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>B0F99F41-5E0B-1AB6-1D20-552301629A16</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F7EBD301-D5B7-6741-F293-3FB74370E865"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1CD025D5-0D56-1E3B-D592-F033900C0124" name="DADOS_BIOMETRICOS_USUARIO_USUARIOS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>3CE23CF1-7FDB-2593-4032-2C00BD66F5FA</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C6406FA-950D-4794-110D-C8DEBE3DD402"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

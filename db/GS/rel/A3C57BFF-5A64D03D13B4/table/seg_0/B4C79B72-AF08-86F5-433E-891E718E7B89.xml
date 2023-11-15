@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B4C79B72-AF08-86F5-433E-891E718E7B89" name="CONSULTAS">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>83909459-C6DD-2F0D-FC7E-06EAB15B99F0</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_consulta" id="54EDD637-9F18-22AA-9510-2D1CF85128A3">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>DC97BD12-6B3B-D1EB-9253-3A8DEDD3F247</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_consulta" id="F0BC4577-8F08-F5EB-F218-CD97F5251919">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>FFCE4B2F-23C8-FCD6-7793-EC498BC1B187</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USUARIOS_id_usuario" id="A520EE37-22EF-82BA-39CB-5BB27B60B7EE">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>DEF8341C-D0E6-A249-BE0E-1890B5EEA12B</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="51C8237A-0273-91C0-4DFA-FAD4D2F1B86F" referredColumn="5A3CD6F0-DBF8-6FE6-6142-96C3C6971A06"/>
+</associations>
+</Column>
+<Column name="MEDICOS_id_medico" id="C36D8815-9603-5AC2-EA33-19FFECB836B3">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>BAB28657-11A1-499C-A9F0-9338905F0C3B</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3AA5B8E8-A016-2A87-EC8E-104E8A0B1829" referredColumn="1EEE5CB0-BE3E-EA8D-9B68-C377F9CEE407"/>
+</associations>
+</Column>
+<Column name="TECNOLOGIAS_id_tecnologia" id="D031C06E-580A-FB8D-B191-0605B2613732">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>AD83B082-6370-976F-07CD-9DDD30E8086D</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8CF50D6D-EECF-C46F-5ACA-C739C092B664" referredColumn="BFCC2662-DCCA-DBB5-7FEF-47AF33132D7C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="33C2F261-D2FE-3802-05F2-6B0F4FB3EC83" name="CONSULTAS_PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>465714D5-3FC8-B9B5-B618-072186AFF244</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54EDD637-9F18-22AA-9510-2D1CF85128A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="62D92AC9-1EA5-6441-E559-365E1C82C6CC" name="CONSULTAS_USUARIOS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>5AA56CAF-0A89-D97C-84FB-6F69073B8970</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A520EE37-22EF-82BA-39CB-5BB27B60B7EE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E34155C0-C2F2-795F-4C22-26235C8CF6FF" name="CONSULTAS_TECNOLOGIAS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>D0E33A14-4386-1EF9-F7DA-ACFA95B4F5FF</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D031C06E-580A-FB8D-B191-0605B2613732"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="192F9EF3-1CFC-1462-F179-1B572E20272D" name="CONSULTAS_MEDICOS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>FFB51508-FEEB-3E45-681B-64B5AD6D6376</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C36D8815-9603-5AC2-EA33-19FFECB836B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
