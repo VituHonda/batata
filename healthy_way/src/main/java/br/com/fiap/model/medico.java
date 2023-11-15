@@ -1,0 +1,61 @@
+package br.com.fiap.model;
+
+public class medico {
+	
+	private int idMedico;
+	private String nomeMedico;
+	private String emailMedico;
+	private String senhaMedico;
+	private String crm;
+	
+	public medico() {}
+	
+	public medico(String nomeMedico, String emailMedico, String senhaMedico, String crm) {
+		super();
+		this.nomeMedico = nomeMedico;
+		this.emailMedico = emailMedico;
+		this.senhaMedico = senhaMedico;
+		this.crm = crm;
+	}
+
+	public int getIdMedico() {
+		return idMedico;
+	}
+
+	public void setIdMedico(int idMedico) {
+		this.idMedico = idMedico;
+	}
+
+	public String getNomeMedico() {
+		return nomeMedico;
+	}
+
+	public void setNomeMedico(String nomeMedico) {
+		this.nomeMedico = nomeMedico;
+	}
+
+	public String getEmailMedico() {
+		return emailMedico;
+	}
+
+	public void setEmailMedico(String emailMedico) {
+		this.emailMedico = emailMedico;
+	}
+
+	public String getSenhaMedico() {
+		return senhaMedico;
+	}
+
+	public void setSenhaMedico(String senhaMedico) {
+		this.senhaMedico = senhaMedico;
+	}
+
+	public String getCrm() {
+		return crm;
+	}
+
+	public void setCrm(String crm) {
+		this.crm = crm;
+	}
+	
+}
