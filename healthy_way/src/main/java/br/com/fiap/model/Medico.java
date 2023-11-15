@@ -1,6 +1,6 @@
 package br.com.fiap.model;
 
-public class medico {
+public class Medico {
 	
 	private int idMedico;
 	private String nomeMedico;
@@ -8,9 +8,9 @@ public class medico {
 	private String senhaMedico;
 	private String crm;
 	
-	public medico() {}
+	public Medico() {}
 	
-	public medico(String nomeMedico, String emailMedico, String senhaMedico, String crm) {
+	public Medico(String nomeMedico, String emailMedico, String senhaMedico, String crm) {
 		super();
 		this.nomeMedico = nomeMedico;
 		this.emailMedico = emailMedico;
