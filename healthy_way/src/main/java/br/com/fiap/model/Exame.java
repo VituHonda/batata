@@ -2,14 +2,14 @@ package br.com.fiap.model;
 
 import java.util.Calendar;
 
-public class Exames {
+public class Exame {
 	
 	private int idExame;
 	private Calendar dataExamne;
 	
-	public Exames() {}
+	public Exame() {}
 	
-	public Exames(Calendar dataExamne) {
+	public Exame(Calendar dataExamne) {
 		super();
 		this.dataExamne = dataExamne;
 	}
