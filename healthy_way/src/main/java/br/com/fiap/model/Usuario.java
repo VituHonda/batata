@@ -1,15 +1,15 @@
 package br.com.fiap.model;
 
-public class Usuarios {
+public class Usuario {
 	
 	private int idUsuario;
 	private String nomeUsuario;
 	private String emailUsuario;
 	private String senhaUsuario;
 	
-	public Usuarios() {}
+	public Usuario() {}
 	
-	public Usuarios(String nomeUsuario, String emailUsuario, String senhaUsuario) {
+	public Usuario(String nomeUsuario, String emailUsuario, String senhaUsuario) {
 		super();
 		this.nomeUsuario = nomeUsuario;
 		this.emailUsuario = emailUsuario;
