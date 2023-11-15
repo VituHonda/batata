@@ -8,27 +8,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.connection.ConnectionManager;
-import br.com.fiap.controller.UsuarioDAO;
+import br.com.fiap.controller.UsuarioEnderecoDAO;
 import br.com.fiap.exception.DBException;
-import br.com.fiap.model.Usuario;
+import br.com.fiap.model.UsuarioEndereco;
 
-public class OracleUsuarioDAO implements UsuarioDAO {
+public class OracleUsuarioEnderecoDAO implements UsuarioEnderecoDAO {
 
 	private Connection conexao;
 
 	@Override
-	public void cadastrar(Usuario usuario) throws DBException {
-
+	public void cadastrar(UsuarioEndereco usuarioEndereco) throws DBException {
 		PreparedStatement stmt = null;
 
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "INSERT INTO USUARIOS(nome_usuario, email_usuario, senha_usuario) VALUES (?,?,?)";
+			String sql = "INSERT INTO USUARIO_ENDERECOS(rua_usuario,estado_usuario,numero_usuario,cep_usuario, usuarios_id_usuario) VALUES (?,?,?,?,?)";
 			stmt = conexao.prepareStatement(sql);
-			stmt.setString(1, usuario.getNomeUsuario());
-			stmt.setString(2, usuario.getEmailUsuario());
-			stmt.setString(3, usuario.getSenhaUsuario());
+			stmt.setString(1, usuarioEndereco.getRuaUsuario());
+			stmt.setString(2, usuarioEndereco.getEstadoUsuario());
+			stmt.setInt(3, usuarioEndereco.getNumeroUsuario());
+			stmt.setString(4, usuarioEndereco.getCepUsuario());
+			stmt.setInt(5, usuarioEndereco.getIdUsuario());
 
 			stmt.execute();
 
@@ -47,18 +48,19 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 	}
 
 	@Override
-	public void atualizar(Usuario usuario) throws DBException {
+	public void atualizar(UsuarioEndereco usuarioEndereco) throws DBException {
 
 		PreparedStatement stmt = null;
 
 		try {
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "UPDATE USUARIOS SET nome_usuario = ?, email_usuario = ?, senha_usuario = ? WHERE id_usuario = ?";
+			String sql = "UPDATE USUARIO_ENDERECOS SET rua_usuario = ?, estado_usuario = ?, numero_usuario = ?, cep_usuario = ? WHERE id_usuario_endereco = ?";
 			stmt = conexao.prepareStatement(sql);
-			stmt.setString(1, usuario.getNomeUsuario());
-			stmt.setString(2, usuario.getEmailUsuario());
-			stmt.setString(3, usuario.getSenhaUsuario());
-			stmt.setInt(4, usuario.getIdUsuario());
+			stmt.setString(1, usuarioEndereco.getRuaUsuario());
+			stmt.setString(2, usuarioEndereco.getEstadoUsuario());
+			stmt.setInt(3, usuarioEndereco.getNumeroUsuario());
+			stmt.setString(4, usuarioEndereco.getCepUsuario());
+			stmt.setInt(5, usuarioEndereco.getIdUsuarioEndereco());
 
 			stmt.execute();
 
@@ -78,12 +80,12 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 
 	@Override
 	public void remover(int id) throws DBException {
-
+		
 		PreparedStatement stmt = null;
 
 		try {
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "DELETE FROM USUARIOS WHERE id_usuario = ?";
+			String sql = "DELETE FROM USUARIO_ENDERECOS WHERE id_usuario_endereco = ?";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setInt(1, id);
 
@@ -104,29 +106,29 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 	}
 
 	@Override
-	public Usuario buscar(int id) {
-
-		Usuario usuario = null;
+	public UsuarioEndereco buscar(int id) {
+		UsuarioEndereco usuarioEndereco = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "SELECT * FROM USUARIOS WHERE id_usuario = ?";
+			String sql = "SELECT * FROM USUARIO_ENDERECOS WHERE id_usuario_endereco = ?";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setInt(1, id);
 
 			rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				int codigoUsuario = rs.getInt("id_usuario");
-				String nomeUsuario = rs.getString("nome_usuario");
-				String emailUsuario = rs.getString("email_usuario");
-				String senhaUsuario = rs.getString("senha_usuario");
+				int codigoUsuarioEndereco = rs.getInt("id_usuario_endereco");
+				String ruaUsuario = rs.getString("rua_usuario");
+				String estadoUsuario = rs.getString("estado_usuario");
+				int numeroUsuario = rs.getInt("numero_usuario");
+				String cepUsuario = rs.getString("cep_usuario");
 
-				usuario = new Usuario(nomeUsuario, emailUsuario, senhaUsuario);
-				usuario.setIdUsuario(codigoUsuario);
+				usuarioEndereco = new UsuarioEndereco(ruaUsuario, estadoUsuario, numeroUsuario, cepUsuario);
+				usuarioEndereco.setIdUsuarioEndereco(codigoUsuarioEndereco);
 
 			}
 
@@ -142,33 +144,33 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 			}
 		}
 
-		return usuario;
+		return usuarioEndereco;
 	}
 
 	@Override
-	public List<Usuario> listar() {
-
-		List<Usuario> lista = new ArrayList<Usuario>();
+	public List<UsuarioEndereco> listar() {
+		List<UsuarioEndereco> lista = new ArrayList<UsuarioEndereco>();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "SELECT * FROM USUARIOS";
+			String sql = "SELECT * FROM USUARIO_ENDERECOS";
 			stmt = conexao.prepareStatement(sql);
 			rs = stmt.executeQuery();
 			while(rs.next()) {
 				
-				int codigoUsuario = rs.getInt("id_usuario");
-				String nomeUsuario = rs.getString("nome_usuario");
-				String emailUsuario = rs.getString("email_usuario");
-				String senhaUsuario = rs.getString("senha_usuario");
+				int codigoUsuarioEndereco = rs.getInt("id_usuario_endereco");
+				String ruaUsuario = rs.getString("rua_usuario");
+				String estadoUsuario = rs.getString("estado_usuario");
+				int numeroUsuario = rs.getInt("numero_usuario");
+				String cepUsuario = rs.getString("cep_usuario");
 
-				Usuario usuario = new Usuario(nomeUsuario, emailUsuario, senhaUsuario);
-				usuario.setIdUsuario(codigoUsuario);
+				UsuarioEndereco usuarioEndereco = new UsuarioEndereco(ruaUsuario, estadoUsuario, numeroUsuario, cepUsuario);
+				usuarioEndereco.setIdUsuarioEndereco(codigoUsuarioEndereco);
 				
-				lista.add(usuario);
+				lista.add(usuarioEndereco);
 			}
 
 		} catch (SQLException e) {

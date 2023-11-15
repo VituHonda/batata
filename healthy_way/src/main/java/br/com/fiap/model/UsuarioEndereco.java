@@ -5,12 +5,13 @@ public class UsuarioEndereco {
 	private int idUsuarioEndereco;
 	private String ruaUsuario;
 	private String estadoUsuario;
-	private String numeroUsuario;
+	private int numeroUsuario;
 	private String cepUsuario;
+	private int idUsuario;
 	
 	public UsuarioEndereco() {}
 	
-	public UsuarioEndereco(String ruaUsuario, String estadoUsuario, String numeroUsuario, String cepUsuario) {
+	public UsuarioEndereco(String ruaUsuario, String estadoUsuario, int numeroUsuario, String cepUsuario) {
 		super();
 		this.ruaUsuario = ruaUsuario;
 		this.estadoUsuario = estadoUsuario;
@@ -42,11 +43,11 @@ public class UsuarioEndereco {
 		this.estadoUsuario = estadoUsuario;
 	}
 
-	public String getNumeroUsuario() {
+	public int getNumeroUsuario() {
 		return numeroUsuario;
 	}
 
-	public void setNumeroUsuario(String numeroUsuario) {
+	public void setNumeroUsuario(int numeroUsuario) {
 		this.numeroUsuario = numeroUsuario;
 	}
 
@@ -56,6 +57,14 @@ public class UsuarioEndereco {
 
 	public void setCepUsuario(String cepUsuario) {
 		this.cepUsuario = cepUsuario;
+	}
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	
 }
