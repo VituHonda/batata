@@ -1,6 +1,7 @@
 package br.com.fiap.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario {
 	
@@ -8,6 +9,8 @@ public class Usuario {
 	private String nomeUsuario;
 	private String emailUsuario;
 	private String senhaUsuario;
+	private List<UsuarioEndereco> usuarioEnderecos;
+	private List<UsuarioTelefone> usuarioTelefones;
 	
 	public Usuario() {}
 	
