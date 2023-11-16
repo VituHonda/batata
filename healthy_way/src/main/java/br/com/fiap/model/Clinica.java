@@ -1,9 +1,13 @@
 package br.com.fiap.model;
 
+import java.util.List;
+
 public class Clinica {
 	
 	private int idClinica;
 	private String nomeClinica;
+	private List<ClinicaEndereco> clinicaEnderecos;
+	private List<ClinicaTelefone> clinicaTelefones;
 	
 	public Clinica() {}
 	
@@ -26,6 +30,22 @@ public class Clinica {
 
 	public void setNomeClinica(String nomeClinica) {
 		this.nomeClinica = nomeClinica;
+	}
+
+	public List<ClinicaEndereco> getClinicaEnderecos() {
+		return clinicaEnderecos;
+	}
+
+	public void setClinicaEnderecos(List<ClinicaEndereco> clinicaEnderecos) {
+		this.clinicaEnderecos = clinicaEnderecos;
+	}
+
+	public List<ClinicaTelefone> getClinicaTelefones() {
+		return clinicaTelefones;
+	}
+
+	public void setClinicaTelefones(List<ClinicaTelefone> clinicaTelefones) {
+		this.clinicaTelefones = clinicaTelefones;
 	}
 	
 }
