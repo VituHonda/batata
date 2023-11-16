@@ -1,4 +1,4 @@
-package br.com.fiap.controller.impl;
+package br.com.fiap.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.fiap.dao.UsuarioEnderecoDAO;
 import br.com.fiap.connection.ConnectionManager;
-import br.com.fiap.controller.UsuarioEnderecoDAO;
 import br.com.fiap.exception.DBException;
 import br.com.fiap.model.UsuarioEndereco;
 

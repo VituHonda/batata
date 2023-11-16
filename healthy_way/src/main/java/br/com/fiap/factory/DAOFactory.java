@@ -1,9 +1,9 @@
 package br.com.fiap.factory;
 
-import br.com.fiap.controller.UsuarioDAO;
-import br.com.fiap.controller.UsuarioEnderecoDAO;
-import br.com.fiap.controller.impl.OracleUsuarioDAO;
-import br.com.fiap.controller.impl.OracleUsuarioEnderecoDAO;
+import br.com.fiap.dao.UsuarioDAO;
+import br.com.fiap.dao.UsuarioEnderecoDAO;
+import br.com.fiap.dao.impl.OracleUsuarioDAO;
+import br.com.fiap.dao.impl.OracleUsuarioEnderecoDAO;
 
 public class DAOFactory {
 

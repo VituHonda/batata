@@ -2,7 +2,7 @@ package br.com.fiap.test;
 
 import java.util.List;
 
-import br.com.fiap.controller.UsuarioDAO;
+import br.com.fiap.dao.UsuarioDAO;
 import br.com.fiap.exception.DBException;
 import br.com.fiap.factory.DAOFactory;
 import br.com.fiap.model.Usuario;

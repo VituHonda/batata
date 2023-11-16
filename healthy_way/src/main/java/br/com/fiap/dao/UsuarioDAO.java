@@ -1,4 +1,4 @@
-package br.com.fiap.controller;
+package br.com.fiap.dao;
 
 import java.util.List;
 
