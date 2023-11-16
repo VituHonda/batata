@@ -6,6 +6,9 @@ public class Consulta {
 	
 	private int idConsulta;
 	private Calendar dataConsulta;
+	private int idUsuario;
+	private int idMedico;
+	private int idTecnologia;
 	
 	public Consulta() {}
 	
@@ -28,6 +31,30 @@ public class Consulta {
 
 	public void setDataConsulta(Calendar dataConsulta) {
 		this.dataConsulta = dataConsulta;
+	}
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	public int getIdMedico() {
+		return idMedico;
+	}
+
+	public void setIdMedico(int idMedico) {
+		this.idMedico = idMedico;
+	}
+
+	public int getIdTecnologia() {
+		return idTecnologia;
+	}
+
+	public void setIdTecnologia(int idTecnologia) {
+		this.idTecnologia = idTecnologia;
 	}
 	
 }
