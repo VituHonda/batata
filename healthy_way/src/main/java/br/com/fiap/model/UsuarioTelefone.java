@@ -4,6 +4,7 @@ public class UsuarioTelefone {
 	
 	private int idUsuarioTelefone;
 	private String usuarioTelefone;
+	private int idUsuario;
 	
 	public UsuarioTelefone() {}
 	
@@ -26,6 +27,14 @@ public class UsuarioTelefone {
 
 	public void setUsuarioTelefone(String usuarioTelefone) {
 		this.usuarioTelefone = usuarioTelefone;
+	}
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	
 }
