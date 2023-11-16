@@ -4,6 +4,7 @@ public class ClinicaTelefone {
 	
 	private int idClinicaTelefone;
 	private String telefoneClinica;
+	private int idClinica;
 	
 	public ClinicaTelefone() {}
 	
@@ -26,6 +27,14 @@ public class ClinicaTelefone {
 
 	public void setTelefoneClinica(String telefoneClinica) {
 		this.telefoneClinica = telefoneClinica;
+	}
+
+	public int getIdClinica() {
+		return idClinica;
+	}
+
+	public void setIdClinica(int idClinica) {
+		this.idClinica = idClinica;
 	}
 	
 }
