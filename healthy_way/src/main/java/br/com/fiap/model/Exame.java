@@ -5,13 +5,15 @@ import java.util.Calendar;
 public class Exame {
 	
 	private int idExame;
-	private Calendar dataExamne;
+	private String nomeExame;
+	private Calendar dataExame;
 	
 	public Exame() {}
 	
-	public Exame(Calendar dataExamne) {
+	public Exame(String nomeExame,Calendar dataExame) {
 		super();
-		this.dataExamne = dataExamne;
+		this.nomeExame = nomeExame;
+		this.dataExame = dataExame;
 	}
 
 	public int getIdExame() {
@@ -22,12 +24,20 @@ public class Exame {
 		this.idExame = idExame;
 	}
 
-	public Calendar getDataExamne() {
-		return dataExamne;
+	public Calendar getDataExame() {
+		return dataExame;
 	}
 
-	public void setDataExamne(Calendar dataExamne) {
-		this.dataExamne = dataExamne;
+	public void setDataExamne(Calendar dataExame) {
+		this.dataExame = dataExame;
+	}
+
+	public String getNomeExame() {
+		return nomeExame;
+	}
+
+	public void setNomeExame(String nomeExame) {
+		this.nomeExame = nomeExame;
 	}
 	
 }
