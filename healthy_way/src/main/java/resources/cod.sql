@@ -264,17 +264,6 @@ BEGIN
 END;
 /
 
-CREATE SEQUENCE sq_id_medico START WITH 1 INCREMENT BY 1;
-
-CREATE OR REPLACE TRIGGER tr_ins_medico
-BEFORE INSERT ON medicos FOR EACH ROW       
-BEGIN
-  SELECT sq_id_medico.nextval
-  INTO :NEW.id_medico
-  FROM DUAL;
-END;
-/
-
 CREATE SEQUENCE sq_id_exame START WITH 1 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER tr_ins_exame
