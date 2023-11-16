@@ -5,6 +5,7 @@ import br.com.fiap.dao.AvaliacaoDAO;
 import br.com.fiap.dao.ClinicaDAO;
 import br.com.fiap.dao.ClinicaEnderecoDAO;
 import br.com.fiap.dao.ClinicaTelefoneDAO;
+import br.com.fiap.dao.ConsultaDAO;
 import br.com.fiap.dao.ExameDAO;
 import br.com.fiap.dao.MedicoDAO;
 import br.com.fiap.dao.TecnologiaDAO;
@@ -16,6 +17,7 @@ import br.com.fiap.dao.impl.OracleAvaliacaoDAO;
 import br.com.fiap.dao.impl.OracleClinicaDAO;
 import br.com.fiap.dao.impl.OracleClinicaEnderecoDAO;
 import br.com.fiap.dao.impl.OracleClinicaTelefoneDAO;
+import br.com.fiap.dao.impl.OracleConsultaDAO;
 import br.com.fiap.dao.impl.OracleExameDAO;
 import br.com.fiap.dao.impl.OracleMedicoDAO;
 import br.com.fiap.dao.impl.OracleTecnologiaDAO;
@@ -67,5 +69,9 @@ public class DAOFactory {
 	
 	public static ClinicaTelefoneDAO getClinicaTelefoneDAO() {
 		return new OracleClinicaTelefoneDAO();
+	}
+	
+	public static ConsultaDAO getConsultaDAO() {
+		return new OracleConsultaDAO();
 	}
 }
