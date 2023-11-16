@@ -4,17 +4,20 @@ public class ClinicaEndereco {
 	
 	private int idClinicaEndereco;
 	private String ruaClinica;
-	private String numeroClinica;
+	private int numeroClinica;
 	private String estadoClinica;
+	private String cidadeClinica;
 	private String cepClinica;
+	private int idClinica;
 	
 	public ClinicaEndereco() {}
 	
-	public ClinicaEndereco(String ruaClinica, String numeroClinica, String estadoClinica, String cepClinica) {
+	public ClinicaEndereco(String ruaClinica, int numeroClinica, String estadoClinica, String cidadeClinica, String cepClinica) {
 		super();
 		this.ruaClinica = ruaClinica;
 		this.numeroClinica = numeroClinica;
 		this.estadoClinica = estadoClinica;
+		this.cidadeClinica = cidadeClinica;
 		this.cepClinica = cepClinica;
 	}
 
@@ -34,11 +37,11 @@ public class ClinicaEndereco {
 		this.ruaClinica = ruaClinica;
 	}
 
-	public String getNumeroClinica() {
+	public int getNumeroClinica() {
 		return numeroClinica;
 	}
 
-	public void setNumeroClinica(String numeroClinica) {
+	public void setNumeroClinica(int numeroClinica) {
 		this.numeroClinica = numeroClinica;
 	}
 
@@ -56,6 +59,22 @@ public class ClinicaEndereco {
 
 	public void setCepClinica(String cepClinica) {
 		this.cepClinica = cepClinica;
+	}
+
+	public String getCidadeClinica() {
+		return cidadeClinica;
+	}
+
+	public void setCidadeClinica(String cidadeClinica) {
+		this.cidadeClinica = cidadeClinica;
+	}
+
+	public int getIdClinica() {
+		return idClinica;
+	}
+
+	public void setIdClinica(int idClinica) {
+		this.idClinica = idClinica;
 	}
 	
 }
