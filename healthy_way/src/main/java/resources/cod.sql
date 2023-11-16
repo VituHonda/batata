@@ -274,3 +274,36 @@ BEGIN
   FROM DUAL;
 END;
 /
+
+CREATE SEQUENCE sq_id_admin START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_admin
+BEFORE INSERT ON admins FOR EACH ROW       
+BEGIN
+  SELECT sq_id_admin.nextval
+  INTO :NEW.id_admin
+  FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE sq_id_avaliacao START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_avaliacao
+BEFORE INSERT ON avaliacoes FOR EACH ROW       
+BEGIN
+  SELECT sq_id_avaliacao.nextval
+  INTO :NEW.id_avaliacao
+  FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE sq_id_clinica START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_clinica
+BEFORE INSERT ON clinicas FOR EACH ROW       
+BEGIN
+  SELECT sq_id_clinica.nextval
+  INTO :NEW.id_clinica
+  FROM DUAL;
+END;
+/
