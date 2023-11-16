@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.connection.ConnectionManager;
-import br.com.fiap.dao.UsuarioDAOTelefone;
+import br.com.fiap.dao.UsuarioTelefoneDAO;
 import br.com.fiap.exception.DBException;
 import br.com.fiap.model.UsuarioTelefone;
 
-public class OracleUsuarioDAOTelefone implements UsuarioDAOTelefone {
+public class OracleUsuarioTelefoneDAO implements UsuarioTelefoneDAO {
 
 	private Connection conexao;
 

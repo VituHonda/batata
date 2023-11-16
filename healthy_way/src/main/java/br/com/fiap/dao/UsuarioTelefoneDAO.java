@@ -5,7 +5,7 @@ import java.util.List;
 import br.com.fiap.exception.DBException;
 import br.com.fiap.model.UsuarioTelefone;
 
-public interface UsuarioDAOTelefone {
+public interface UsuarioTelefoneDAO {
 
 	void cadastrar(UsuarioTelefone usuarioTelefone) throws DBException;
 	void atualizar(UsuarioTelefone usuarioTelefone) throws DBException; 
