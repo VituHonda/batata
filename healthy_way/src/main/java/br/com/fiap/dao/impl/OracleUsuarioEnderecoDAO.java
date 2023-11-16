@@ -23,13 +23,14 @@ public class OracleUsuarioEnderecoDAO implements UsuarioEnderecoDAO {
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "INSERT INTO USUARIO_ENDERECOS(rua_usuario,estado_usuario,numero_usuario,cep_usuario, usuarios_id_usuario) VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO USUARIO_ENDERECOS(rua_usuario,estado_usuario,numero_usuario,cep_usuario,cidade_usuario,usuarios_id_usuario) VALUES (?,?,?,?,?,?)";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setString(1, usuarioEndereco.getRuaUsuario());
 			stmt.setString(2, usuarioEndereco.getEstadoUsuario());
 			stmt.setInt(3, usuarioEndereco.getNumeroUsuario());
 			stmt.setString(4, usuarioEndereco.getCepUsuario());
-			stmt.setInt(5, usuarioEndereco.getIdUsuario());
+			stmt.setString(5, usuarioEndereco.getCidadeUsuario());
+			stmt.setInt(6, usuarioEndereco.getIdUsuario());
 
 			stmt.execute();
 
@@ -54,13 +55,14 @@ public class OracleUsuarioEnderecoDAO implements UsuarioEnderecoDAO {
 
 		try {
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "UPDATE USUARIO_ENDERECOS SET rua_usuario = ?, estado_usuario = ?, numero_usuario = ?, cep_usuario = ? WHERE id_usuario_endereco = ?";
+			String sql = "UPDATE USUARIO_ENDERECOS SET rua_usuario = ?, estado_usuario = ?, numero_usuario = ?, cep_usuario = ?, cidade_usuario = ? WHERE id_usuario_endereco = ?";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setString(1, usuarioEndereco.getRuaUsuario());
 			stmt.setString(2, usuarioEndereco.getEstadoUsuario());
 			stmt.setInt(3, usuarioEndereco.getNumeroUsuario());
 			stmt.setString(4, usuarioEndereco.getCepUsuario());
-			stmt.setInt(5, usuarioEndereco.getIdUsuarioEndereco());
+			stmt.setString(5, usuarioEndereco.getCidadeUsuario());
+			stmt.setInt(6, usuarioEndereco.getIdUsuarioEndereco());
 
 			stmt.execute();
 
@@ -126,8 +128,9 @@ public class OracleUsuarioEnderecoDAO implements UsuarioEnderecoDAO {
 				String estadoUsuario = rs.getString("estado_usuario");
 				int numeroUsuario = rs.getInt("numero_usuario");
 				String cepUsuario = rs.getString("cep_usuario");
+				String cidadeUsuario = rs.getString("cidade_usuario");
 
-				usuarioEndereco = new UsuarioEndereco(ruaUsuario, estadoUsuario, numeroUsuario, cepUsuario);
+				usuarioEndereco = new UsuarioEndereco(ruaUsuario, estadoUsuario, numeroUsuario, cepUsuario, cidadeUsuario);
 				usuarioEndereco.setIdUsuarioEndereco(codigoUsuarioEndereco);
 
 			}
@@ -166,8 +169,9 @@ public class OracleUsuarioEnderecoDAO implements UsuarioEnderecoDAO {
 				String estadoUsuario = rs.getString("estado_usuario");
 				int numeroUsuario = rs.getInt("numero_usuario");
 				String cepUsuario = rs.getString("cep_usuario");
+				String cidadeUsuario = rs.getString("cidade_usuario");
 
-				UsuarioEndereco usuarioEndereco = new UsuarioEndereco(ruaUsuario, estadoUsuario, numeroUsuario, cepUsuario);
+				UsuarioEndereco usuarioEndereco = new UsuarioEndereco(ruaUsuario, estadoUsuario, numeroUsuario, cepUsuario, cidadeUsuario);
 				usuarioEndereco.setIdUsuarioEndereco(codigoUsuarioEndereco);
 				
 				lista.add(usuarioEndereco);

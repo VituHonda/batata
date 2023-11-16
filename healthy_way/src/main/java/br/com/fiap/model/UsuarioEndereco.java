@@ -7,16 +7,18 @@ public class UsuarioEndereco {
 	private String estadoUsuario;
 	private int numeroUsuario;
 	private String cepUsuario;
+	private String cidadeUsuario;
 	private int idUsuario;
 	
 	public UsuarioEndereco() {}
 	
-	public UsuarioEndereco(String ruaUsuario, String estadoUsuario, int numeroUsuario, String cepUsuario) {
+	public UsuarioEndereco(String ruaUsuario, String estadoUsuario, int numeroUsuario, String cepUsuario, String cidadeUsuario) {
 		super();
 		this.ruaUsuario = ruaUsuario;
 		this.estadoUsuario = estadoUsuario;
 		this.numeroUsuario = numeroUsuario;
 		this.cepUsuario = cepUsuario;
+		this.cidadeUsuario = cidadeUsuario;
 	}
 
 	public int getIdUsuarioEndereco() {
@@ -65,6 +67,14 @@ public class UsuarioEndereco {
 
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
+	}
+
+	public String getCidadeUsuario() {
+		return cidadeUsuario;
+	}
+
+	public void setCidadeUsuario(String cidadeUsuario) {
+		this.cidadeUsuario = cidadeUsuario;
 	}
 	
 }
