@@ -14,6 +14,8 @@ public class DadosBiometricosUsuario {
 	private String convenioMedico;
 	private String cpf;
 	
+	private int idUsuario;
+	
 	public DadosBiometricosUsuario() {}
 
 	public int getIdDadosBiometricosUsuario() {
@@ -94,6 +96,14 @@ public class DadosBiometricosUsuario {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	
 }
