@@ -2,6 +2,7 @@ package br.com.fiap.factory;
 
 import br.com.fiap.dao.AdminDAO;
 import br.com.fiap.dao.AvaliacaoDAO;
+import br.com.fiap.dao.ClinicaDAO;
 import br.com.fiap.dao.ExameDAO;
 import br.com.fiap.dao.MedicoDAO;
 import br.com.fiap.dao.TecnologiaDAO;
@@ -10,6 +11,7 @@ import br.com.fiap.dao.UsuarioEnderecoDAO;
 import br.com.fiap.dao.UsuarioTelefoneDAO;
 import br.com.fiap.dao.impl.OracleAdminDAO;
 import br.com.fiap.dao.impl.OracleAvaliacaoDAO;
+import br.com.fiap.dao.impl.OracleClinicaDAO;
 import br.com.fiap.dao.impl.OracleExameDAO;
 import br.com.fiap.dao.impl.OracleMedicoDAO;
 import br.com.fiap.dao.impl.OracleTecnologiaDAO;
@@ -49,6 +51,10 @@ public class DAOFactory {
 	
 	public static AvaliacaoDAO getAvaliacaoDAO() {
 		return new OracleAvaliacaoDAO();
+	}
+	
+	public static ClinicaDAO getClinicaDAO() {
+		return new OracleClinicaDAO();
 	}
 	
 }
