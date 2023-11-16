@@ -6,6 +6,8 @@ public class MedicoPorClinica {
 	
 	private Calendar inicioContrato;
 	private Calendar fimContrato;
+	private int idMedico;
+	private int idClinica;
 	
 	public MedicoPorClinica() {}
 	
@@ -28,6 +30,22 @@ public class MedicoPorClinica {
 
 	public void setFimContrato(Calendar fimContrato) {
 		this.fimContrato = fimContrato;
+	}
+
+	public int getIdMedico() {
+		return idMedico;
+	}
+
+	public void setIdMedico(int idMedico) {
+		this.idMedico = idMedico;
+	}
+
+	public int getIdClinica() {
+		return idClinica;
+	}
+
+	public void setIdClinica(int idClinica) {
+		this.idClinica = idClinica;
 	}
 	
 }
