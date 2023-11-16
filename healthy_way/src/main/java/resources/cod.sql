@@ -229,3 +229,59 @@ BEGIN
   INTO :NEW.id_usuario_endereco
   FROM DUAL;
 END;
+/
+
+CREATE SEQUENCE sq_id_usuario_telefone START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_usuario_telefone
+BEFORE INSERT ON usuario_telefones FOR EACH ROW       
+BEGIN
+  SELECT sq_id_usuario_telefone.nextval
+  INTO :NEW.id_usuario_telefone
+  FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE sq_id_tecnologia START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_tecnologia
+BEFORE INSERT ON tecnologia FOR EACH ROW       
+BEGIN
+  SELECT sq_id_tecnologia.nextval
+  INTO :NEW.id_tecnologia
+  FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE sq_id_medico START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_medico
+BEFORE INSERT ON medicos FOR EACH ROW       
+BEGIN
+  SELECT sq_id_medico.nextval
+  INTO :NEW.id_medico
+  FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE sq_id_medico START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_medico
+BEFORE INSERT ON medicos FOR EACH ROW       
+BEGIN
+  SELECT sq_id_medico.nextval
+  INTO :NEW.id_medico
+  FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE sq_id_exame START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_exame
+BEFORE INSERT ON exames FOR EACH ROW       
+BEGIN
+  SELECT sq_id_exame.nextval
+  INTO :NEW.id_exame
+  FROM DUAL;
+END;
+/
