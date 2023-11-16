@@ -6,15 +6,17 @@ public class Medico {
 	private String nomeMedico;
 	private String emailMedico;
 	private String senhaMedico;
+	private String estadoCrm;
 	private String crm;
 	
 	public Medico() {}
 	
-	public Medico(String nomeMedico, String emailMedico, String senhaMedico, String crm) {
+	public Medico(String nomeMedico, String emailMedico, String senhaMedico,String estadoCrm, String crm) {
 		super();
 		this.nomeMedico = nomeMedico;
 		this.emailMedico = emailMedico;
 		this.senhaMedico = senhaMedico;
+		this.estadoCrm = estadoCrm;
 		this.crm = crm;
 	}
 
@@ -56,6 +58,14 @@ public class Medico {
 
 	public void setCrm(String crm) {
 		this.crm = crm;
+	}
+
+	public String getEstadoCrm() {
+		return estadoCrm;
+	}
+
+	public void setEstadoCrm(String estadoCrm) {
+		this.estadoCrm = estadoCrm;
 	}
 	
 }
