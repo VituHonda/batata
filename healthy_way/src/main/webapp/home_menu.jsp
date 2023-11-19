@@ -23,9 +23,9 @@
 					class="nav-link dropdown-toggle" href="#" role="button"
 					data-bs-toggle="dropdown" aria-expanded="false"> Entrar </a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="cliente.jsp">Área do cliente</a></li>
+						<li><a class="dropdown-item" href="loginUsuario.jsp">Área do cliente</a></li>
 						<li><hr class="dropdown-divider"></li>
-						<li><a class="dropdown-item" href="medico.jsp">Área do médico</a></li>
+						<li><a class="dropdown-item" href="loginMedico.jsp">Área do médico</a></li>
 					
 					</ul></li>
 			</ul>

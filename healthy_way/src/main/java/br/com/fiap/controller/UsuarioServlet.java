@@ -14,7 +14,7 @@ import br.com.fiap.dao.UsuarioDAO;
 import br.com.fiap.factory.DAOFactory;
 import br.com.fiap.model.Usuario;
 
-@WebServlet("/cliente")
+@WebServlet("/usuarios")
 public class UsuarioServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -42,7 +42,7 @@ public class UsuarioServlet extends HttpServlet {
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Usuario> lista = dao.listar();
 		request.setAttribute("usuarios", lista);
-		request.getRequestDispatcher("cliente.jsp").forward(request, response);
+		request.getRequestDispatcher("usuarios.jsp").forward(request, response);
 	}
 	
 	

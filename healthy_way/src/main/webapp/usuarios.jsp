@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cliente</title>
+<title>Usuario</title>
 <%@ include file="header.jsp"%>
 </head>
 <body>
@@ -20,18 +20,11 @@
 				<th>Nome</th>
 				<th>Email</th>
 			</tr>
-			<c:forEach items="${usuarios}" var="p">
+			<c:forEach items="${usuarios}" var="user">
 				<tr>
-					<td>${p.idUsuario}</td>
-					<td>${p.nomeUsuario}</td>
-					<td>${p}</td>
-					<td><c:url value="usuaio" var="link">
-							<c:param name="acao" value="abrir-form-edicao" />
-							<c:param name="codigo" value="${p.idUsuario }" />
-						</c:url> <a href="${link}" class="btn btn-primary btn-xs">Editar</a>
-						<button type="button" class="btn btn-danger btn-xs"
-							data-toggle="modal" data-target="#excluirModal"
-							onclick="codigoExcluir.value = ${p.codigo}">Excluir</button></td>
+					<td>${user.getIdUsuario}</td>
+					<td>${user.getNomeUsuario}</td>
+					<td>${user.getEmailUsuario}</td>
 				</tr>
 			</c:forEach>
 		</table>
