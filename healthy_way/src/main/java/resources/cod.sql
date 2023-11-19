@@ -307,3 +307,47 @@ BEGIN
   FROM DUAL;
 END;
 /
+
+CREATE SEQUENCE sq_id_clinica_endereco START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_clinica_endereco
+BEFORE INSERT ON clinica_enderecos FOR EACH ROW       
+BEGIN
+  SELECT sq_id_clinica_endereco.nextval
+  INTO :NEW.id_clinica_endereco
+  FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE sq_id_clinica_telefone START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_clinica_telefone
+BEFORE INSERT ON clinica_telefones FOR EACH ROW       
+BEGIN
+  SELECT sq_id_clinica_telefone.nextval
+  INTO :NEW.id_clinica_telefone
+  FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE sq_id_consulta START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_consulta
+BEFORE INSERT ON consultas FOR EACH ROW       
+BEGIN
+  SELECT sq_id_consulta.nextval
+  INTO :NEW.id_consulta
+  FROM DUAL;
+END;
+/
+
+CREATE SEQUENCE sq_id_dados_biometricos START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER tr_ins_dados_biometricos
+BEFORE INSERT ON dados_biometricos_usuario FOR EACH ROW       
+BEGIN
+  SELECT sq_id_dados_biometricos.nextval
+  INTO :NEW.id_dados_biometricos_usuario
+  FROM DUAL;
+END;
+/

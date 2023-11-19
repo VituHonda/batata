@@ -34,13 +34,13 @@ public class UsuarioDAOTest {
 //			e.printStackTrace();
 //		}
 
-//		// listar
-//
-//		List<Usuario> lista = dao.listar();
-//
-//		for (Usuario user : lista) {
-//			System.out.println(user.getNomeUsuario() + " " + user.getEmailUsuario());
-//		}
+		// listar
+
+		List<Usuario> lista = dao.listar();
+
+		for (Usuario user : lista) {
+			System.out.println(user.getNomeUsuario() + " " + user.getEmailUsuario());
+		}
 
 //		// buscar
 //		usuario = dao.buscar(81);
