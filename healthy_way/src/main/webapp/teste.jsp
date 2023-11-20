@@ -9,14 +9,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Usuario</title>
+<title>teste</title>
 <%@ include file="./includes/header.jsp"%>
 </head>
 <body>
 
-	
+	<form action="teste" method="get">
+        <input type="submit" value="Chamar Método doGet">
+    </form>
+
+
 
 	<%@ include file="./includes/footer.jsp"%>
-
 </body>
 </html>
+
