@@ -1,10 +1,3 @@
-BEGIN
-  FOR cur_rec IN (SELECT table_name FROM user_tables) LOOP
-    EXECUTE IMMEDIATE 'DROP TABLE ' || cur_rec.table_name || ' CASCADE CONSTRAINTS';
-  END LOOP;
-END;
-/
-
 CREATE TABLE admins (
     id_admin    NUMBER NOT NULL,
     email_admin VARCHAR2(50),
@@ -29,7 +22,7 @@ CREATE TABLE clinica_enderecos (
     numero_clinica      NUMBER,
     estado_clinica      VARCHAR2(50),
     cep_clinica         VARCHAR2(9),
-    clinica_id_clinica  NUMBER NOT NULL
+    clinicas_id_clinica NUMBER NOT NULL
 );
 
 ALTER TABLE clinica_enderecos ADD CONSTRAINT clinica_enderecos_pk PRIMARY KEY ( id_clinica_endereco );
@@ -37,7 +30,7 @@ ALTER TABLE clinica_enderecos ADD CONSTRAINT clinica_enderecos_pk PRIMARY KEY ( 
 CREATE TABLE clinica_telefones (
     id_clinica_telefone NUMBER NOT NULL,
     telefone_clinica    VARCHAR2(20),
-    clinica_id_clinica  NUMBER NOT NULL
+    clinicas_id_clinica NUMBER NOT NULL
 );
 
 ALTER TABLE clinica_telefones ADD CONSTRAINT clinica_telefones_pk PRIMARY KEY ( id_clinica_telefone );
@@ -87,7 +80,8 @@ ALTER TABLE exame_por_consulta ADD CONSTRAINT exame_por_consulta_id_exame_un UNI
 
 CREATE TABLE exames (
     id_exame   NUMBER NOT NULL,
-    data_exame DATE
+    data_exame DATE,
+    nome_exame VARCHAR2(50)
 );
 
 ALTER TABLE exames ADD CONSTRAINT exames_pk PRIMARY KEY ( id_exame );
@@ -96,18 +90,18 @@ CREATE TABLE medico_por_clinica (
     data_inicio_contrato DATE,
     data_final_contrato  DATE,
     medicos_id_medico    NUMBER NOT NULL,
-    clinica_id_clinica   NUMBER NOT NULL
+    clinicas_id_clinica  NUMBER NOT NULL
 );
 
 ALTER TABLE medico_por_clinica ADD CONSTRAINT medico_por_clinica_pk PRIMARY KEY ( medicos_id_medico,
-                                                                                  clinica_id_clinica );
+                                                                                  clinicas_id_clinica );
 
 CREATE TABLE medicos (
     id_medico    NUMBER NOT NULL,
     nome_medico  VARCHAR2(50),
     email_medico VARCHAR2(50),
     senha_medico VARCHAR2(50),
-    estado       VARCHAR2(50),
+    estado_crm   VARCHAR2(50),
     crm          VARCHAR2(20)
 );
 
@@ -150,19 +144,19 @@ CREATE TABLE usuarios (
 ALTER TABLE usuarios ADD CONSTRAINT usuarios_pk PRIMARY KEY ( id_usuario );
 
 ALTER TABLE avaliacoes
-    ADD CONSTRAINT avaliacao_tecnologias_fk FOREIGN KEY ( tecnologias_id_tecnologia )
+    ADD CONSTRAINT avaliacoes_tecnologias_fk FOREIGN KEY ( tecnologias_id_tecnologia )
         REFERENCES tecnologias ( id_tecnologia );
 
 ALTER TABLE avaliacoes
-    ADD CONSTRAINT avaliacao_usuarios_fk FOREIGN KEY ( usuarios_id_usuario )
+    ADD CONSTRAINT avaliacoes_usuarios_fk FOREIGN KEY ( usuarios_id_usuario )
         REFERENCES usuarios ( id_usuario );
 
 ALTER TABLE clinica_enderecos
-    ADD CONSTRAINT clinica_enderecos_clinica_fk FOREIGN KEY ( clinica_id_clinica )
+    ADD CONSTRAINT clinica_enderecos_clinicas_fk FOREIGN KEY ( clinicas_id_clinica )
         REFERENCES clinicas ( id_clinica );
 
 ALTER TABLE clinica_telefones
-    ADD CONSTRAINT clinica_telefones_clinica_fk FOREIGN KEY ( clinica_id_clinica )
+    ADD CONSTRAINT clinica_telefones_clinicas_fk FOREIGN KEY ( clinicas_id_clinica )
         REFERENCES clinicas ( id_clinica );
 
 ALTER TABLE consultas
@@ -192,7 +186,7 @@ ALTER TABLE exame_por_consulta
         REFERENCES exames ( id_exame );
 
 ALTER TABLE medico_por_clinica
-    ADD CONSTRAINT medico_por_clinica_clinica_fk FOREIGN KEY ( clinica_id_clinica )
+    ADD CONSTRAINT medico_por_clinica_clinicas_fk FOREIGN KEY ( clinicas_id_clinica )
         REFERENCES clinicas ( id_clinica );
 
 ALTER TABLE medico_por_clinica
@@ -208,6 +202,11 @@ ALTER TABLE usuario_telefones
         REFERENCES usuarios ( id_usuario );
 
 
+
+        
+        
+        
+        
 
 CREATE SEQUENCE sq_id_usuario START WITH 1 INCREMENT BY 1;
 
@@ -245,7 +244,7 @@ END;
 CREATE SEQUENCE sq_id_tecnologia START WITH 1 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER tr_ins_tecnologia
-BEFORE INSERT ON tecnologia FOR EACH ROW       
+BEFORE INSERT ON tecnologias FOR EACH ROW       
 BEGIN
   SELECT sq_id_tecnologia.nextval
   INTO :NEW.id_tecnologia
@@ -341,13 +340,13 @@ BEGIN
 END;
 /
 
-CREATE SEQUENCE sq_id_dados_biometricos START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE sq_id_dado_biometrico START WITH 1 INCREMENT BY 1;
 
-CREATE OR REPLACE TRIGGER tr_ins_dados_biometricos
+CREATE OR REPLACE TRIGGER tr_ins_dado_biometrico
 BEFORE INSERT ON dados_biometricos_usuario FOR EACH ROW       
 BEGIN
-  SELECT sq_id_dados_biometricos.nextval
-  INTO :NEW.id_dados_biometricos_usuario
+  SELECT sq_id_dado_biometrico.nextval
+  INTO :NEW.id_dado_biometrico_usuario
   FROM DUAL;
 END;
 /

@@ -178,6 +178,41 @@ public class OracleAdminDAO implements AdminDAO {
 		return lista;
 	}
 
+	@Override
+	public Admin loginAdmin(Admin admin) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean validarAdmin(Admin admin) {
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			conexao = ConnectionManager.getInstance().getConnection();
+			stmt = conexao.prepareStatement("SELECT * FROM admins WHERE email_admin = ? AND senha_admin = ?");
+			stmt.setString(1, admin.getEmailAdmin());
+			stmt.setString(2, admin.getSenhaAdmin());
+			rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				return true;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
 
 
 }
