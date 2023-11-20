@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Usuario</title>
-<%@ include file="header.jsp"%>
+<%@ include file="./includes/header.jsp"%>
 </head>
 <body>
 
@@ -29,7 +29,7 @@
 			</c:forEach>
 		</table>
 
-	<%@ include file="footer.jsp"%>
+	<%@ include file="./includes/footer.jsp"%>
 
 </body>
 </html>

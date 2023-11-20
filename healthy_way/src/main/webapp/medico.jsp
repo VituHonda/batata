@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Medico</title>
-<%@ include file="header.jsp"%>
+<%@ include file="./includes/header.jsp"%>
 </head>
 <body>
 
 	
 	<h1>Medico</h1>
 
-	<%@ include file="footer.jsp"%>
+	<%@ include file="./includes/footer.jsp"%>
 	
 </body>
 </html>
