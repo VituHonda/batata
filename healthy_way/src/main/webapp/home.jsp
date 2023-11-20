@@ -100,7 +100,7 @@
 				hora de procurar um médico</h1>
 
 			<button type="button" class="btn btn-dark img_button">
-				<a href="cliente.jsp" class="home_button">Cadastre-se</a>
+				<a href="cadastroUsuario.jsp" class="home_button">Cadastre-se</a>
 			</button>
 		</div>
 

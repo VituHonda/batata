@@ -19,7 +19,7 @@
 
 .login_container {
 	width: 30%;
-	height: 50%;
+	height: 65%;
 	background-color: white;
 	border-radius: 20px;
 }
@@ -49,9 +49,15 @@
 
 		<div class="login_container">
 
-			<h1 class="login_text">USER LOGIN</h1>
+			<h1 class="login_text">USER CADASTRO</h1>
 
-			<form action="loginUsuario" method="post">
+			<form action="cadastroUsuario" method="post">
+				<div class="mb-3">
+					<label for="exampleInputName" class="form-label m-3">Nome</label> <input
+						type="text" class="form-control ms-3 input_size"
+						id="exampleInputName" name="login-nome"
+						placeholder="nome sobrenome" required>
+				</div>
 				<div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label m-3">Email
 						address</label> <input type="email" class="form-control ms-3 input_size"
@@ -66,16 +72,12 @@
 				</div>
 
 				<div>
-					<span class="submit_error login_text">${erro}</span><br>
-					<span class="submit_error login_text">${cadastro}</span>
+					<span class="submit_error login_text">${erro}</span>
 				</div>
 				<div>
 					<button type="submit" class="btn btn-primary ms-4">Submit</button>
 				</div>
 				<div class="m-4">
-					<button type="button" class="btn btn-primary">
-					<a href="cadastroUsuario.jsp" class="button_link">Cadastrar-se</a>
-					</button>
 					<button type="button" class="btn btn-secondary">
 						<a href="home.jsp" class="button_link">Voltar</a>
 					</button>

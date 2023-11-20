@@ -12,6 +12,8 @@
 					aria-current="page" href="tecnologias?acao=listar">Tecnologias</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Usuarios</a>
 				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Medicos</a>
+				</li>
 				<li class="nav-item"><a class="nav-link" href="#">Consultas</a>
 				</li>
 			</ul>
