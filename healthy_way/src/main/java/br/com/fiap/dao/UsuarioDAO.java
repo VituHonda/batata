@@ -11,6 +11,9 @@ public interface UsuarioDAO {
 	void atualizar(Usuario usuario) throws DBException; 
 	void remover(int id) throws DBException;
 	Usuario buscar(int id);
+	Usuario loginUsuario(Usuario usuario);
+	public boolean validarUsuario(Usuario usuario);
 	List<Usuario> listar();
+	
 	
 }

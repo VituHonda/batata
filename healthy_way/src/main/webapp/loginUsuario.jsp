@@ -25,12 +25,15 @@
 }
 
 .login_text {
-
-	margin:1rem;
+	margin: 1rem;
 }
 
 .input_size {
 	width: 80%;
+}
+
+.submit_error {
+	color: red;
 }
 </style>
 
@@ -40,21 +43,29 @@
 	<div class="custom-container">
 
 		<div class="login_container">
-			
+
 			<h1 class="login_text">USER LOGIN</h1>
-			<form>
+
+			<form action="loginUsuario" method="post">
 				<div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label m-3">Email
 						address</label> <input type="email" class="form-control ms-3 input_size"
-						id="exampleInputEmail1" aria-describedby="emailHelp">
+						id="exampleInputEmail1" aria-describedby="emailHelp"
+						name="login-email" placeholder="nome@email.com" required>
 				</div>
 				<div class="mb-3">
 					<label for="exampleInputPassword1" class="form-label m-3">Password</label>
 					<input type="password" class="form-control ms-3 input_size"
-						id="exampleInputPassword1">
+						id="exampleInputPassword1" name="login-password"
+						placeholder="******" required>
 				</div>
 
-				<button type="submit" class="btn btn-primary ms-4">Submit</button>
+				<div>
+					<span class="submit_error login_text">${erro}</span>
+				</div>
+				<div>
+					<button type="submit" class="btn btn-primary ms-4">Submit</button>
+				</div>
 			</form>
 
 		</div>

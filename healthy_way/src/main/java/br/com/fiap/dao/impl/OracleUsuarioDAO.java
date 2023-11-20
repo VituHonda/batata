@@ -186,4 +186,77 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 		return lista;
 	}
 
+	@Override
+	public Usuario loginUsuario(Usuario usuario) {
+	
+		Usuario usuarioLogin = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			conexao = ConnectionManager.getInstance().getConnection();
+			String sql = "SELECT * FROM usuarios WHERE email_usuario = ? AND senha_usuario = ?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setString(1, usuario.getEmailUsuario());
+			stmt.setString(2, usuario.getSenhaUsuario());
+
+			rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				int codigoUsuario = rs.getInt("id_usuario");
+				String nomeUsuario = rs.getString("nome_usuario");
+				String emailUsuario = rs.getString("email_usuario");
+				String senhaUsuario = rs.getString("senha_usuario");
+
+				usuario = new Usuario(nomeUsuario, emailUsuario, senhaUsuario);
+				usuario.setIdUsuario(codigoUsuario);
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return usuario;
+	}
+
+	@Override
+	public boolean validarUsuario(Usuario usuario) {
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			conexao = ConnectionManager.getInstance().getConnection();
+			stmt = conexao.prepareStatement("SELECT * FROM usuarios WHERE email_usuario = ? AND senha_usuario = ?");
+			stmt.setString(1, usuario.getEmailUsuario());
+			stmt.setString(2, usuario.getSenhaUsuario());
+			rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				return true;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
+
 }
