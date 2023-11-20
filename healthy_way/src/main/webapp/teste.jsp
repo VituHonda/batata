@@ -18,7 +18,9 @@
         <input type="submit" value="Chamar Método doGet">
     </form>
 
-
+	<p>
+		<c:out value="${mensagem}" />
+	</p>
 
 	<%@ include file="./includes/footer.jsp"%>
 </body>
