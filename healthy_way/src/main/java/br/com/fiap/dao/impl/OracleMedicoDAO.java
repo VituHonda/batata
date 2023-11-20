@@ -191,5 +191,78 @@ public class OracleMedicoDAO implements MedicoDAO{
 		return lista;
 	}
 
+	@Override
+	public Medico loginMedico(Medico medico) {
+		Medico medicoLogin = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			conexao = ConnectionManager.getInstance().getConnection();
+			String sql = "SELECT * FROM medicos WHERE medico = ? AND medico = ?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setString(1, medico.getEmailMedico());
+			stmt.setString(2, medico.getSenhaMedico());
+
+			rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				int codigoMedico = rs.getInt("id_medico");
+				String nomeMedico = rs.getString("nome_medico");
+				String emailMedico = rs.getString("email_medico");
+				String senhaMedico = rs.getString("senha_medico");
+				String estadoCrm = rs.getString("estado_crm");
+				String crm = rs.getString("crm");
+
+				medico = new Medico(nomeMedico, emailMedico, senhaMedico, estadoCrm, crm);
+				medico.setIdMedico(codigoMedico);
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return medico;
+	}
+
+	@Override
+	public boolean validarMedico(Medico medico) {
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			conexao = ConnectionManager.getInstance().getConnection();
+			stmt = conexao.prepareStatement("SELECT * FROM medicos WHERE email_medico = ? AND senha_medico = ?");
+			stmt.setString(1, medico.getEmailMedico());
+			stmt.setString(2, medico.getSenhaMedico());
+			rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				return true;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
 
 }

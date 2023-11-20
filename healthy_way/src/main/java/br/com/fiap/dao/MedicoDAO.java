@@ -12,6 +12,8 @@ public interface MedicoDAO {
 	void atualizar(Medico medico) throws DBException; 
 	void remover(int id) throws DBException;
 	Medico buscar(int id);
+	Medico loginMedico(Medico medico);
+	public boolean validarMedico(Medico medico);
 	List<Medico> listar();
 	
 }

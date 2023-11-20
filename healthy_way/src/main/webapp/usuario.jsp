@@ -14,6 +14,7 @@
 </head>
 <body>
 
+	<h1>USER</h1>
 	
 
 	<%@ include file="./includes/footer.jsp"%>
