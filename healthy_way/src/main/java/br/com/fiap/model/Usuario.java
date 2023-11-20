@@ -1,15 +1,20 @@
 package br.com.fiap.model;
 
-public class Usuarios {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Usuario {
 	
 	private int idUsuario;
 	private String nomeUsuario;
 	private String emailUsuario;
 	private String senhaUsuario;
+	private List<UsuarioEndereco> usuarioEnderecos;
+	private List<UsuarioTelefone> usuarioTelefones;
 	
-	public Usuarios() {}
+	public Usuario() {}
 	
-	public Usuarios(String nomeUsuario, String emailUsuario, String senhaUsuario) {
+	public Usuario(String nomeUsuario, String emailUsuario, String senhaUsuario) {
 		super();
 		this.nomeUsuario = nomeUsuario;
 		this.emailUsuario = emailUsuario;
@@ -46,6 +51,22 @@ public class Usuarios {
 
 	public void setSenhaUsuario(String senhaUsuario) {
 		this.senhaUsuario = senhaUsuario;
+	}
+
+	public List<UsuarioTelefone> getUsuarioTelefones() {
+		return usuarioTelefones;
+	}
+
+	public void setUsuarioTelefones(List<UsuarioTelefone> usuarioTelefones) {
+		this.usuarioTelefones = usuarioTelefones;
+	}
+
+	public List<UsuarioEndereco> getUsuarioEnderecos() {
+		return usuarioEnderecos;
+	}
+
+	public void setUsuarioEnderecos(List<UsuarioEndereco> usuarioEnderecos) {
+		this.usuarioEnderecos = usuarioEnderecos;
 	}
 	
 }
