@@ -1,14 +1,15 @@
 package br.com.fiap.model;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class Consulta {
 	
 	private int idConsulta;
 	private Calendar dataConsulta;
-	private int idUsuario;
-	private int idMedico;
-	private int idTecnologia;
+	private Usuario usuario;
+	private Medico medico;
+	private Tecnologia tecnologiaConsulta;
 	
 	public Consulta() {}
 	
@@ -33,28 +34,32 @@ public class Consulta {
 		this.dataConsulta = dataConsulta;
 	}
 
-	public int getIdUsuario() {
-		return idUsuario;
+	public Tecnologia getTecnologiaConsulta() {
+		return tecnologiaConsulta;
 	}
 
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setTecnologiaConsulta(Tecnologia tecnologiaConsulta) {
+		this.tecnologiaConsulta = tecnologiaConsulta;
 	}
 
-	public int getIdMedico() {
-		return idMedico;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setIdMedico(int idMedico) {
-		this.idMedico = idMedico;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public int getIdTecnologia() {
-		return idTecnologia;
+	public Medico getMedico() {
+		return medico;
 	}
 
-	public void setIdTecnologia(int idTecnologia) {
-		this.idTecnologia = idTecnologia;
+	public void setMedico(Medico medico) {
+		this.medico = medico;
 	}
+
+
+
+
 	
 }

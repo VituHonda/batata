@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>listar usuarios</title>
+<title>listar medicos</title>
 <%@ include file="./includes/header.jsp"%>
 </head>
 <body>
@@ -15,7 +15,7 @@
 	<%@ include file="./includes/admin_menu.jsp"%>
 
 	<div class="container">
-		<h1 class="mt-5">Usuarios</h1>
+		<h1 class="mt-5">Medicos</h1>
 		<c:if test="${not empty msg }">
 			<div class="alert alert-success">${msg}</div>
 		</c:if>
@@ -28,15 +28,15 @@
 				<th>Nome</th>
 				<th>EMAIL</th>
 			</tr>
-			<c:forEach items="${usuarios}" var="t">
+			<c:forEach items="${medicos}" var="t">
 				<tr>
-					<td>${t.idUsuario}</td>
-					<td>${t.nomeUsuario}</td>
-					<td>${t.emailUsuario}</td>
+					<td>${t.idMedico}</td>
+					<td>${t.nomeMedico}</td>
+					<td>${t.emailMedico}</td>
 					<td class="d-flex">
-						<form action="usuarios" method="post" class="ms-3">
+						<form action="medicos" method="post" class="ms-3">
 							<input type="hidden" name="acao" value="excluir"> <input
-								type="hidden" name="idUsuario" value="${t.idUsuario}">
+								type="hidden" name="idMedico" value="${t.idMedico}">
 							<button type="submit" class="btn btn-danger btn-xs">Excluir</button>
 						</form></td>
 				</tr>

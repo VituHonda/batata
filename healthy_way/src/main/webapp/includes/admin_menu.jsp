@@ -12,7 +12,7 @@
 					aria-current="page" href="tecnologias?acao=listar">Tecnologias</a></li>
 				<li class="nav-item"><a class="nav-link" href="usuarios?acao=listar">Usuarios</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="#">Medicos</a>
+				<li class="nav-item"><a class="nav-link" href="medicos?acao=listar">Medicos</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="#">Consultas</a>
 				</li>

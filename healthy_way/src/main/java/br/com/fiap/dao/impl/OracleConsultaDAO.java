@@ -31,7 +31,7 @@ public class OracleConsultaDAO implements ConsultaDAO {
 			stmt.setDate(1, data);
 			stmt.setInt(2, consulta.getIdUsuario());
 			stmt.setInt(3, consulta.getIdMedico());
-			stmt.setInt(3, consulta.getIdTecnologia());
+			stmt.setInt(4, consulta.getTecnologiaConsulta().getIdTecnologia());
 
 			stmt.execute();
 

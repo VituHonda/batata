@@ -1,5 +1,7 @@
 package br.com.fiap.model;
 
+import java.util.List;
+
 public class Medico {
 	
 	private int idMedico;
@@ -8,6 +10,7 @@ public class Medico {
 	private String senhaMedico;
 	private String estadoCrm;
 	private String crm;
+	private List<Consulta> medicoConsultas;
 	
 	public Medico() {}
 	
@@ -66,6 +69,14 @@ public class Medico {
 
 	public void setEstadoCrm(String estadoCrm) {
 		this.estadoCrm = estadoCrm;
+	}
+
+	public List<Consulta> getMedicoConsultas() {
+		return medicoConsultas;
+	}
+
+	public void setMedicoConsultas(List<Consulta> medicoConsultas) {
+		this.medicoConsultas = medicoConsultas;
 	}
 	
 }

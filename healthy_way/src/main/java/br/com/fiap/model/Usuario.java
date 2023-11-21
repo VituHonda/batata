@@ -11,6 +11,10 @@ public class Usuario {
 	private String senhaUsuario;
 	private List<UsuarioEndereco> usuarioEnderecos;
 	private List<UsuarioTelefone> usuarioTelefones;
+	private List<Avaliacao> usuarioAvaliacoes;
+	private List<DadosBiometricosUsuario> usuarioDadosBiometricos;
+	private List<Consulta> usuarioConsultas;
+	
 	
 	public Usuario() {}
 	
@@ -67,6 +71,30 @@ public class Usuario {
 
 	public void setUsuarioEnderecos(List<UsuarioEndereco> usuarioEnderecos) {
 		this.usuarioEnderecos = usuarioEnderecos;
+	}
+
+	public List<Avaliacao> getUsuarioAvaliacoes() {
+		return usuarioAvaliacoes;
+	}
+
+	public void setUsuarioAvaliacoes(List<Avaliacao> usuarioAvaliacoes) {
+		this.usuarioAvaliacoes = usuarioAvaliacoes;
+	}
+
+	public List<DadosBiometricosUsuario> getUsuarioDadosBiometricos() {
+		return usuarioDadosBiometricos;
+	}
+
+	public void setUsuarioDadosBiometricos(List<DadosBiometricosUsuario> usuarioDadosBiometricos) {
+		this.usuarioDadosBiometricos = usuarioDadosBiometricos;
+	}
+
+	public List<Consulta> getUsuarioConsultas() {
+		return usuarioConsultas;
+	}
+
+	public void setUsuarioConsultas(List<Consulta> usuarioConsultas) {
+		this.usuarioConsultas = usuarioConsultas;
 	}
 	
 }

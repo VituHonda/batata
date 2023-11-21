@@ -1,10 +1,15 @@
 package br.com.fiap.model;
 
+import java.util.List;
+
 public class Avaliacao {
 	
 	private int idAvaliacao;
 	private int nota;
 	private String mensagem;
+	private List<Tecnologia> tecnologiaConsulta;
+	private int idUsuario;
+	
 	
 	public Avaliacao() {}
 	
@@ -35,6 +40,22 @@ public class Avaliacao {
 
 	public void setMensagem(String mensagem) {
 		this.mensagem = mensagem;
+	}
+
+	public List<Tecnologia> getTecnologiaConsulta() {
+		return tecnologiaConsulta;
+	}
+
+	public void setTecnologiaConsulta(List<Tecnologia> tecnologiaConsulta) {
+		this.tecnologiaConsulta = tecnologiaConsulta;
+	}
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	
 }
