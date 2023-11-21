@@ -35,6 +35,11 @@
 .submit_error {
 	color: red;
 }
+
+.button_link {
+	text-decoration: none;
+	color: white;
+}
 </style>
 
 </head>
@@ -65,6 +70,14 @@
 				</div>
 				<div>
 					<button type="submit" class="btn btn-primary ms-4">Submit</button>
+				</div>
+				<div class="m-4">
+					<button type="button" class="btn btn-primary">
+					<a href="" class="button_link">Cadastrar-se</a>
+					</button>
+					<button type="button" class="btn btn-secondary">
+						<a href="home.jsp" class="button_link">Voltar</a>
+					</button>
 				</div>
 			</form>
 
