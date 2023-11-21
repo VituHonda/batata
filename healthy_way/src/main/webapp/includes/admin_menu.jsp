@@ -10,7 +10,7 @@
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="tecnologias?acao=listar">Tecnologias</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Usuarios</a>
+				<li class="nav-item"><a class="nav-link" href="usuarios?acao=listar">Usuarios</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="#">Medicos</a>
 				</li>
