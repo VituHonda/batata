@@ -44,6 +44,7 @@ ALTER TABLE clinicas ADD CONSTRAINT clinica_pk PRIMARY KEY ( id_clinica );
 
 CREATE TABLE consultas (
     id_consulta               NUMBER NOT NULL,
+    situacao				  NUMBER,
     data_consulta             DATE,
     usuarios_id_usuario       NUMBER NOT NULL,
     medicos_id_medico         NUMBER NOT NULL,

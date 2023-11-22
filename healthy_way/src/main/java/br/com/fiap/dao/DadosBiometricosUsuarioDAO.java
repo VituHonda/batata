@@ -13,5 +13,6 @@ public interface DadosBiometricosUsuarioDAO {
 	void remover(int id) throws DBException;
 	DadosBiometricosUsuario buscar(int id);
 	List<DadosBiometricosUsuario> listar();
+	List<DadosBiometricosUsuario> listarUsuario(int idUsuario);
 	
 }

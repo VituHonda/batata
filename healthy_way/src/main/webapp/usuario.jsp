@@ -14,10 +14,22 @@
 </head>
 <body>
 
-	<h1>USER</h1>
-	
+	<div class="d-flex">
+		<%@ include file="./includes/usuario_sidebar.jsp"%>
+
+		<div class="m-5">
+			<h1>
+				Bem-vindo
+					<c:out value="${user}" />
+				!!!
+			</h1>
+		</div>
+
+	</div>
 
 	<%@ include file="./includes/footer.jsp"%>
 
 </body>
 </html>
+
+

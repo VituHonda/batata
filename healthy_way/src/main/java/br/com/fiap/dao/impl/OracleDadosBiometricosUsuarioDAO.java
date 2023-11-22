@@ -226,5 +226,51 @@ public class OracleDadosBiometricosUsuarioDAO implements DadosBiometricosUsuario
 		return lista;
 	}
 
+	@Override
+	public List<DadosBiometricosUsuario> listarUsuario(int idUsuario) {
+		
+		
+		List<DadosBiometricosUsuario> listaD = new ArrayList<DadosBiometricosUsuario>();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			conexao = ConnectionManager.getInstance().getConnection();
+			String sql = "SELECT * FROM dados_biometricos_usuario where usuarios_id_usuario = ?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setInt(1,idUsuario);
+			rs = stmt.executeQuery();
+			
+			while(rs.next()) {
+				int codigoDadosBiometricos = rs.getInt("id_dado_biometrico_usuario");
+				String tipoSangue = rs.getString("tipo_sanguineo");
+				String convenioMedico = rs.getString("convenio_medico");
+				String genero = rs.getString("genero");
+
+
+				DadosBiometricosUsuario dadosBiometricos = new DadosBiometricosUsuario();
+				dadosBiometricos.setIdDadosBiometricosUsuario(codigoDadosBiometricos);
+				dadosBiometricos.setTipoSanguineo(tipoSangue);
+				dadosBiometricos.setConvenioMedico(convenioMedico);
+				dadosBiometricos.setGenero(genero);
+				System.out.println("teste" + dadosBiometricos.getGenero());
+				listaD.add(dadosBiometricos);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return listaD;
+	}
+
 
 }

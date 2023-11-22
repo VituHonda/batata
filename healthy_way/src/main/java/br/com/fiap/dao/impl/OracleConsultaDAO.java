@@ -29,8 +29,8 @@ public class OracleConsultaDAO implements ConsultaDAO {
 			stmt = conexao.prepareStatement(sql);
 			java.sql.Date data = new java.sql.Date(consulta.getDataConsulta().getTimeInMillis());
 			stmt.setDate(1, data);
-			stmt.setInt(2, consulta.getIdUsuario());
-			stmt.setInt(3, consulta.getIdMedico());
+			stmt.setInt(2, consulta.getUsuario().getIdUsuario());
+			stmt.setInt(3, consulta.getMedico().getIdMedico());
 			stmt.setInt(4, consulta.getTecnologiaConsulta().getIdTecnologia());
 
 			stmt.execute();
@@ -103,7 +103,8 @@ public class OracleConsultaDAO implements ConsultaDAO {
 				Calendar dataConsulta = Calendar.getInstance();
 				dataConsulta.setTimeInMillis(data.getTime());
 
-				consulta = new Consulta(dataConsulta);
+				consulta = new Consulta();
+				consulta.setDataConsulta(dataConsulta);
 				consulta.setIdConsulta(codigoConsulta);
 
 			}
@@ -143,7 +144,52 @@ public class OracleConsultaDAO implements ConsultaDAO {
 				Calendar dataConsulta = Calendar.getInstance();
 				dataConsulta.setTimeInMillis(data.getTime());
 
-				Consulta consulta = new Consulta(dataConsulta);
+				Consulta consulta = new Consulta();
+				consulta.setDataConsulta(dataConsulta);
+				consulta.setIdConsulta(codigoConsulta);
+
+				lista.add(consulta);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return lista;
+	}
+
+	@Override
+	public List<Consulta> listarConsultas(int idUsuario) {
+		List<Consulta> lista = new ArrayList<Consulta>();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			conexao = ConnectionManager.getInstance().getConnection();
+			String sql = "SELECT * FROM consultas where usuarios_id_usuario = ?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setInt(1, idUsuario);
+			
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+
+				int codigoConsulta = rs.getInt("id_usuario");
+
+				java.sql.Date data = rs.getDate("data_consulta");
+				Calendar dataConsulta = Calendar.getInstance();
+				dataConsulta.setTimeInMillis(data.getTime());
+
+				Consulta consulta = new Consulta();
+				consulta.setDataConsulta(dataConsulta);
 				consulta.setIdConsulta(codigoConsulta);
 
 				lista.add(consulta);

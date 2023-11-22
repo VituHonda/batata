@@ -14,7 +14,9 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href="medicos?acao=listar">Medicos</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="#">Consultas</a>
+				<li class="nav-item"><a class="nav-link" href="consultas?acao=listar">Consultas</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="avaliacoes?acao=listar">Avaliações</a>
 				</li>
 			</ul>
 		</div>

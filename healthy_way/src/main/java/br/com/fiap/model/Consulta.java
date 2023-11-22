@@ -6,16 +6,21 @@ import java.util.List;
 public class Consulta {
 	
 	private int idConsulta;
+	private int situacao;
 	private Calendar dataConsulta;
 	private Usuario usuario;
 	private Medico medico;
 	private Tecnologia tecnologiaConsulta;
-	
+		
 	public Consulta() {}
 	
-	public Consulta(Calendar dataConsulta) {
+	public Consulta(Calendar dataConsulta, Usuario usuario, Medico medico, Tecnologia tecnologia) {
 		super();
 		this.dataConsulta = dataConsulta;
+		this.usuario = usuario;
+		this.medico = medico;
+		this.tecnologiaConsulta = tecnologia;
+		this.situacao = 0;
 	}
 
 	public int getIdConsulta() {
@@ -56,6 +61,14 @@ public class Consulta {
 
 	public void setMedico(Medico medico) {
 		this.medico = medico;
+	}
+
+	public int getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(int situacao) {
+		this.situacao = situacao;
 	}
 
 

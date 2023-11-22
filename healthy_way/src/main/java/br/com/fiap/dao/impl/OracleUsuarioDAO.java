@@ -258,5 +258,47 @@ public class OracleUsuarioDAO implements UsuarioDAO {
 		return false;
 	}
 
+	@Override
+	public Usuario buscarEmail(String email) {
+		Usuario usuario = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			conexao = ConnectionManager.getInstance().getConnection();
+			String sql = "SELECT * FROM USUARIOS WHERE email_usuario = ?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setString(1, email);
+
+			rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				int codigoUsuario = rs.getInt("id_usuario");
+				String nomeUsuario = rs.getString("nome_usuario");
+				String emailUsuario = rs.getString("email_usuario");
+
+				usuario = new Usuario();
+				usuario.setIdUsuario(codigoUsuario);
+				usuario.setNomeUsuario(nomeUsuario);
+				usuario.setEmailUsuario(emailUsuario);
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return usuario;
+	}
+
 
 }

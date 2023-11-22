@@ -11,6 +11,7 @@ public interface ConsultaDAO {
 //	void atualizar(Consulta consulta) throws DBException; 
 	void remover(int id) throws DBException;
 	Consulta buscar(int id);
+	List<Consulta> listarConsultas(int idUsuario);
 	List<Consulta> listar();
 	
 }

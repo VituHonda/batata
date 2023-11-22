@@ -44,16 +44,20 @@ public class LoginUsuarioServlet extends HttpServlet {
 			usuarioLogin.setEmailUsuario(email);
 			usuarioLogin.setSenhaUsuario(senha);
 			
+			Usuario usuario = dao.buscarEmail(email);
+			
+			
 			if (dao.validarUsuario(usuarioLogin)) {
 				HttpSession session = request.getSession();
-				session.setAttribute("user", email);
+				session.setAttribute("user", usuario);
 				request.getRequestDispatcher("usuario.jsp").forward(request, response);
 			} else {
 				request.setAttribute("erro", "Usuário ou senha inválido");
 				request.getRequestDispatcher("loginUsuario.jsp").forward(request, response);
 			}
 			
-		
+			
+			
 	}
 
 }

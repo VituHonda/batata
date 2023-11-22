@@ -7,8 +7,8 @@ public class Avaliacao {
 	private int idAvaliacao;
 	private int nota;
 	private String mensagem;
-	private List<Tecnologia> tecnologiaConsulta;
-	private int idUsuario;
+	private Tecnologia tecnologiaConsulta;
+	private Usuario usuario;;
 	
 	
 	public Avaliacao() {}
@@ -42,20 +42,23 @@ public class Avaliacao {
 		this.mensagem = mensagem;
 	}
 
-	public List<Tecnologia> getTecnologiaConsulta() {
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Tecnologia getTecnologiaConsulta() {
 		return tecnologiaConsulta;
 	}
 
-	public void setTecnologiaConsulta(List<Tecnologia> tecnologiaConsulta) {
+	public void setTecnologiaConsulta(Tecnologia tecnologiaConsulta) {
 		this.tecnologiaConsulta = tecnologiaConsulta;
 	}
 
-	public int getIdUsuario() {
-		return idUsuario;
-	}
 
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
-	}
 	
 }
