@@ -25,7 +25,8 @@
 			<c:if test="${not empty erro }">
 				<div class="alert alert-danger">${erro}</div>
 			</c:if>
-			<form action="cadastro-consulta?cadastrar" method="post">
+			<form action="usuario-consulta" method="post">
+			<input type="hidden" value="cadastrar" name="acao">
 				<div class="form-group">
 					<label for="id-medico">Medicos</label> <select
 						name="medico" id="id-medico" class="form-control">
@@ -46,7 +47,7 @@
 					</select>
 				</div>
 
-				<br> <input type="submit" value="Salvar"
+				<br> <input type="submit" value="Agendar"
 					class="btn btn-primary">
 			</form>
 		</div>

@@ -7,16 +7,14 @@ public class Consulta {
 	
 	private int idConsulta;
 	private int situacao;
-	private Calendar dataConsulta;
 	private Usuario usuario;
 	private Medico medico;
 	private Tecnologia tecnologiaConsulta;
 		
 	public Consulta() {}
 	
-	public Consulta(Calendar dataConsulta, Usuario usuario, Medico medico, Tecnologia tecnologia) {
+	public Consulta(Usuario usuario, Medico medico, Tecnologia tecnologia) {
 		super();
-		this.dataConsulta = dataConsulta;
 		this.usuario = usuario;
 		this.medico = medico;
 		this.tecnologiaConsulta = tecnologia;
@@ -29,14 +27,6 @@ public class Consulta {
 
 	public void setIdConsulta(int idConsulta) {
 		this.idConsulta = idConsulta;
-	}
-
-	public Calendar getDataConsulta() {
-		return dataConsulta;
-	}
-
-	public void setDataConsulta(Calendar dataConsulta) {
-		this.dataConsulta = dataConsulta;
 	}
 
 	public Tecnologia getTecnologiaConsulta() {

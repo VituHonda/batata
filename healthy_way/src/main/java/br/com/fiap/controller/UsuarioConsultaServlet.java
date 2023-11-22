@@ -38,20 +38,27 @@ public class UsuarioConsultaServlet extends HttpServlet {
 		daoTecnologia = DAOFactory.getTecnologiaDAO();
 	}
 	
-	protected void doService(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		carregarOpcoesConsulta(request);
-		carregarOpcoesTecnologia(request);
-		carregarOpcoesMedico(request);
-		request.getRequestDispatcher("cadastro-consulta.jsp").forward(request, response);
-		System.out.println("cadastrar chamado");
 		
 		String acao = request.getParameter("acao");
 		switch (acao) {
 		case "cadastrar":
 			cadastrar(request, response);
-			System.out.println("cadastrar chamado cadastrar");	
+			break;
+		default:
+			break;
+		}
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String acao = request.getParameter("acao");
+		switch (acao) {
+		case "abrirFormCadastro":
+			abrirFormCadastro(request, response);
 			break;
 		default:
 			break;
@@ -61,21 +68,24 @@ public class UsuarioConsultaServlet extends HttpServlet {
 	private void cadastrar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-
+			
+			System.out.println("oiii");
+			
 			HttpSession session = request.getSession();
 			Usuario usuario = (Usuario) session.getAttribute("user");
 			
-			System.out.println(usuario.getIdUsuario());
+			Medico medico = new Medico();
+			int idMedico = (int) request.getAttribute("id-medico");
+			System.out.println(idMedico);
+			medico.setIdMedico(idMedico);
 			
-			Medico medico = (Medico) request.getAttribute("medico");
-			Tecnologia tecnologia = (Tecnologia) request.getAttribute("tecnologia");
+			Tecnologia tecnologia = new Tecnologia();
+			int idTecnologia = (int) request.getAttribute("id-tecnologia");
+			System.out.println(idTecnologia);
+			tecnologia.setIdTecnologia(idTecnologia);
 
-			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-			Calendar data = Calendar.getInstance();
-			data.setTime(format.parse(request.getParameter("data")));
-
-			Consulta consulta = new Consulta(data, usuario, medico, tecnologia);
-
+			Consulta consulta = new Consulta(usuario, medico, tecnologia);
+			consulta.setSituacao(0);
 			daoConsulta.cadastrar(consulta);
 
 			request.setAttribute("msg", "Consulta cadastrada!");
@@ -91,10 +101,9 @@ public class UsuarioConsultaServlet extends HttpServlet {
 
 	private void abrirFormCadastro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		carregarOpcoesConsulta(request);
 		carregarOpcoesTecnologia(request);
 		carregarOpcoesMedico(request);
-		request.getRequestDispatcher("cadastro-consulta.jsp").forward(request, response);
+		request.getRequestDispatcher("usuario-cadastra-consulta.jsp").forward(request, response);
 		
 	}
 
@@ -110,8 +119,4 @@ public class UsuarioConsultaServlet extends HttpServlet {
 		
 	}
 
-	private void carregarOpcoesConsulta(HttpServletRequest request) {
-		List<Consulta> lista = daoConsulta.listar();
-		request.setAttribute("consultas", lista);
-	}
 }

@@ -26,7 +26,6 @@
 			<tr>
 				<th>ID</th>
 				<th>Situacao</th>
-				<th>Data</th>
 				<th>ID USUARIO</th>
 				<th>ID MEDICO</th>
 				<th>ID TECNOLOGIA</th>
@@ -36,7 +35,6 @@
 				<tr>
 					<td>${t.idConsulta}</td>
 					<td>${t.situacao}</td>
-					<td>${t.dataConsulta}</td>
 					<td>${t.usuario.idUsuario}</td>
 					<td>${t.medico.idMedico}</td>
 					<td>${t.tecnologiaConsulta.idTecnologia}</td>

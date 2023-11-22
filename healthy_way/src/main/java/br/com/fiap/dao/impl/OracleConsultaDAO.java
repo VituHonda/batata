@@ -12,6 +12,8 @@ import br.com.fiap.connection.ConnectionManager;
 import br.com.fiap.dao.ConsultaDAO;
 import br.com.fiap.exception.DBException;
 import br.com.fiap.model.Consulta;
+import br.com.fiap.model.Medico;
+import br.com.fiap.model.Tecnologia;
 import br.com.fiap.model.Usuario;
 
 public class OracleConsultaDAO implements ConsultaDAO {
@@ -25,10 +27,8 @@ public class OracleConsultaDAO implements ConsultaDAO {
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "INSERT INTO consultas(data_consulta, usuarios_id_usuario, medicos_id_medico, tecnologias_id_tecnologia) VALUES (?,?,?,?)";
+			String sql = "INSERT INTO consultas(usuarios_id_usuario, medicos_id_medico, tecnologias_id_tecnologia) VALUES (?,?,?)";
 			stmt = conexao.prepareStatement(sql);
-			java.sql.Date data = new java.sql.Date(consulta.getDataConsulta().getTimeInMillis());
-			stmt.setDate(1, data);
 			stmt.setInt(2, consulta.getUsuario().getIdUsuario());
 			stmt.setInt(3, consulta.getMedico().getIdMedico());
 			stmt.setInt(4, consulta.getTecnologiaConsulta().getIdTecnologia());
@@ -99,12 +99,7 @@ public class OracleConsultaDAO implements ConsultaDAO {
 			if (rs.next()) {
 				int codigoConsulta = rs.getInt("id_usuario");
 
-				java.sql.Date data = rs.getDate("data_consulta");
-				Calendar dataConsulta = Calendar.getInstance();
-				dataConsulta.setTimeInMillis(data.getTime());
-
 				consulta = new Consulta();
-				consulta.setDataConsulta(dataConsulta);
 				consulta.setIdConsulta(codigoConsulta);
 
 			}
@@ -138,16 +133,25 @@ public class OracleConsultaDAO implements ConsultaDAO {
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 
-				int codigoConsulta = rs.getInt("id_usuario");
-
-				java.sql.Date data = rs.getDate("data_consulta");
-				Calendar dataConsulta = Calendar.getInstance();
-				dataConsulta.setTimeInMillis(data.getTime());
+				int codigoConsulta = rs.getInt("id_consulta");
+				int codigoUsuario = rs.getInt("usuarios_id_usuario");
+				int codigoTecnologia = rs.getInt("tecnologias_id_tecnologia");
+				int codigoMedico = rs.getInt("medicos_id_medico");
+				int situacao = rs.getInt("situacao");
 
 				Consulta consulta = new Consulta();
-				consulta.setDataConsulta(dataConsulta);
 				consulta.setIdConsulta(codigoConsulta);
-
+				Usuario usuario = new Usuario();
+				usuario.setIdUsuario(codigoUsuario);
+				Tecnologia tecnologia = new Tecnologia();
+				tecnologia.setIdTecnologia(codigoTecnologia);
+				Medico medico = new Medico();
+				medico.setIdMedico(codigoMedico);
+				consulta.setUsuario(usuario);
+				consulta.setTecnologiaConsulta(tecnologia);
+				consulta.setMedico(medico);
+				consulta.setSituacao(situacao);
+				
 				lista.add(consulta);
 			}
 
@@ -182,15 +186,13 @@ public class OracleConsultaDAO implements ConsultaDAO {
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 
-				int codigoConsulta = rs.getInt("id_usuario");
+				
+				
 
-				java.sql.Date data = rs.getDate("data_consulta");
-				Calendar dataConsulta = Calendar.getInstance();
-				dataConsulta.setTimeInMillis(data.getTime());
+				
 
 				Consulta consulta = new Consulta();
-				consulta.setDataConsulta(dataConsulta);
-				consulta.setIdConsulta(codigoConsulta);
+			
 
 				lista.add(consulta);
 			}

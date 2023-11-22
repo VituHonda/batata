@@ -20,7 +20,7 @@
 		<div class="m-5">
 			<h1>
 				Bem-vindo
-					<c:out value="${user}" />
+					<c:out value="${user.nomeUsuario}" />
 				!!!
 			</h1>
 		</div>

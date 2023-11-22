@@ -11,7 +11,7 @@
 					class="bi me-2" width="16" height="16">
 						<use xlink:href="#table"></use></svg> Inicio
 		</a></li>
-		<li><a href="usuario-consulta?acao=cadastrar"
+		<li><a href="usuario-consulta?acao=abrirFormCadastro"
 			class="nav-link text-white"> <svg class="bi me-2" width="16"
 					height="16">
 						<use xlink:href="#table"></use></svg> Agendar Consulta

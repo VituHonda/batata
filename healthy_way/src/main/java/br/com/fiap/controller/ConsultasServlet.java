@@ -101,9 +101,11 @@ private static final long serialVersionUID = 1L;
 	
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Consulta> lista = dao.listar();
+		
+		System.out.println(lista.size());
+		
 		request.setAttribute("consultas", lista);
 		request.getRequestDispatcher("listar-consultas.jsp").forward(request, response);
-		System.out.println("Enviado lista avaliacoes");
 	}
 	
 	private void cadastrar(HttpServletRequest request, HttpServletResponse response)
@@ -118,7 +120,7 @@ private static final long serialVersionUID = 1L;
 			Calendar data = Calendar.getInstance();
 			data.setTime(format.parse(request.getParameter("data")));
 			
-			Consulta consulta = new Consulta(data, usuario, medico, tecnologia);
+			Consulta consulta = new Consulta(usuario, medico, tecnologia);
 
 			dao.cadastrar(consulta);
 
@@ -136,13 +138,8 @@ private static final long serialVersionUID = 1L;
 	private void editar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			int codigo = Integer.parseInt(request.getParameter("codigo"));
-			
-			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-			Calendar data = Calendar.getInstance();
-			data.setTime(format.parse(request.getParameter("data")));
-						
+		
 			Consulta consulta = new Consulta();
-			consulta.setDataConsulta(data);
 
 			dao.cadastrar(consulta);
 
