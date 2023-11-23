@@ -75,7 +75,9 @@ public class UsuarioConsultaServlet extends HttpServlet {
 				
 		HttpSession session = request.getSession();
 		Usuario usuario = (Usuario) session.getAttribute("user");
+		
 		List<Consulta> lista = daoConsulta.listarConsultas(usuario.getIdUsuario());
+	
 		request.setAttribute("consultas", lista);
 		request.getRequestDispatcher("usuario-consulta.jsp").forward(request, response);
 		

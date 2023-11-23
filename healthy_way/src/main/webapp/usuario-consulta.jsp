@@ -50,13 +50,20 @@
 							Nao Atendido
 						</c:if></td>
 
-						<td class="d-flex"><c:if test="${t.situacao == 0}">
+						<td class="d-flex"><c:if test="${t.situacao == 1}">
+								<form action="avaliacoes?acao=abrir-form-cadastro" class="ms-3">
+									<input type="hidden" name="acao" value="abrir-form-cadastro"> <input
+										type="hidden" name="idUsuarioConsulta" value="${t.idConsulta}">
+									<button type="submit" class="btn btn-danger btn-xs">Avaliar Tecnologia</button>
+								</form>
+							</c:if> <c:if test="${t.situacao == 0}">
 								<form action="usuario-consulta" method="post" class="ms-3">
 									<input type="hidden" name="acao" value="excluir"> <input
 										type="hidden" name="idUsuarioConsulta" value="${t.idConsulta}">
 									<button type="submit" class="btn btn-danger btn-xs">Desmarcar</button>
 								</form>
 							</c:if></td>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>

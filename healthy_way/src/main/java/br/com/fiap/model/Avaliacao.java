@@ -8,7 +8,7 @@ public class Avaliacao {
 	private int nota;
 	private String mensagem;
 	private Tecnologia tecnologiaConsulta;
-	private Usuario usuario;;
+	private Usuario usuario;
 	
 	
 	public Avaliacao() {}
@@ -16,6 +16,7 @@ public class Avaliacao {
 	public Avaliacao(int nota, String mensagem) {
 		super();
 		this.nota = nota;
+		this.mensagem =  mensagem;
 	}
 
 	public int getIdAvaliacao() {

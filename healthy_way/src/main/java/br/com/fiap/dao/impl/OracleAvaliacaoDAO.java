@@ -11,6 +11,7 @@ import br.com.fiap.connection.ConnectionManager;
 import br.com.fiap.dao.AvaliacaoDAO;
 import br.com.fiap.exception.DBException;
 import br.com.fiap.model.Avaliacao;
+import br.com.fiap.model.Tecnologia;
 import br.com.fiap.model.Usuario;
 
 public class OracleAvaliacaoDAO implements AvaliacaoDAO{
@@ -24,10 +25,12 @@ public class OracleAvaliacaoDAO implements AvaliacaoDAO{
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "INSERT INTO avaliacoes(nota, mensagem) VALUES (?,?)";
+			String sql = "INSERT INTO avaliacoes(nota, mensagem, usuarios_id_usuario, tecnologias_id_tecnologia) VALUES (?,?,?,?)";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setInt(1, avaliacao.getNota());
 			stmt.setString(2, avaliacao.getMensagem());
+			stmt.setInt(3, avaliacao.getUsuario().getIdUsuario());
+			stmt.setInt(4, avaliacao.getTecnologiaConsulta().getIdTecnologia());
 
 			stmt.execute();
 
@@ -118,9 +121,20 @@ public class OracleAvaliacaoDAO implements AvaliacaoDAO{
 				int codigoAvaliacao = rs.getInt("id_avaliacao");
 				int nota = rs.getInt("nota");
 				String mensagem = rs.getString("mensagem");
+				
+				int idUsuario = rs.getInt("usuarios_id_usuario");
+				int idTecnologia = rs.getInt("tecnologias_id_tecnologia");
 
+				Usuario usuario = new Usuario();
+				Tecnologia tecnologia = new Tecnologia();
+				usuario.setIdUsuario(idUsuario);
+				tecnologia.setIdTecnologia(idTecnologia);
+				
 				avaliacao = new Avaliacao(nota, mensagem);
 				avaliacao.setIdAvaliacao(codigoAvaliacao);
+				avaliacao.setUsuario(usuario);
+				avaliacao.setTecnologiaConsulta(tecnologia);
+				
 
 			}
 
@@ -157,8 +171,18 @@ public class OracleAvaliacaoDAO implements AvaliacaoDAO{
 				int nota = rs.getInt("nota");
 				String mensagem = rs.getString("mensagem");
 
+				int idUsuario = rs.getInt("usuarios_id_usuario");
+				int idTecnologia = rs.getInt("tecnologias_id_tecnologia");
+
+				Usuario usuario = new Usuario();
+				Tecnologia tecnologia = new Tecnologia();
+				usuario.setIdUsuario(idUsuario);
+				tecnologia.setIdTecnologia(idTecnologia);
+		
 				Avaliacao avaliacao = new Avaliacao(nota, mensagem);
 				avaliacao.setIdAvaliacao(codigoAvaliacao);
+				avaliacao.setUsuario(usuario);
+				avaliacao.setTecnologiaConsulta(tecnologia);
 				
 				lista.add(avaliacao);
 			}

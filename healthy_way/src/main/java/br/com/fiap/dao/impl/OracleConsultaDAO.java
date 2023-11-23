@@ -91,16 +91,42 @@ public class OracleConsultaDAO implements ConsultaDAO {
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "SELECT * FROM consultas WHERE id_consulta = ?";
+			String sql = "SELECT * FROM consultas c JOIN usuarios u ON c.usuarios_id_usuario = u.id_usuario JOIN medicos m ON c.medicos_id_medico = m.id_medico JOIN tecnologias t ON c.tecnologias_id_tecnologia = t.id_tecnologia WHERE id_consulta = ?";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setInt(1, id);
 
 			rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				int codigoConsulta = rs.getInt("id_usuario");
-
+				
+				int codigoConsulta = rs.getInt("id_consulta");
+				int codigoUsuario = rs.getInt("id_usuario");
+				int codigoMedico = rs.getInt("id_medico");
+				int codigoTecnologia = rs.getInt("id_tecnologia");
+				
+				String nomeUsuario = rs.getString("nome_usuario");
+				String nomeMedico = rs.getString("nome_medico");
+				String nomeTecnologia = rs.getString("nome_tecnologia");
+				String descTecnologia = rs.getString("descricao_tecnologia");
+				
+				
 				consulta = new Consulta();
+				Usuario usuario = new Usuario();
+				Medico medico = new Medico();
+				Tecnologia tecnologia = new Tecnologia();
+				
+				usuario.setIdUsuario(codigoUsuario);
+				usuario.setNomeUsuario(nomeUsuario);
+				medico.setIdMedico(codigoMedico);
+				medico.setNomeMedico(nomeMedico);
+				tecnologia.setIdTecnologia(codigoTecnologia);
+				tecnologia.setDescricaoTecnologia(descTecnologia);
+				tecnologia.setNomeTecnologia(nomeTecnologia);
+				
+				consulta.setUsuario(usuario);
+				consulta.setMedico(medico);
+				consulta.setTecnologiaConsulta(tecnologia);
+				
 				consulta.setIdConsulta(codigoConsulta);
 
 			}
