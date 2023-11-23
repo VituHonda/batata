@@ -14,7 +14,18 @@
 </head>
 <body>
 
-	<h1>MEDICO</h1>
+	<div class="d-flex">
+		<%@ include file="./includes/medico_sidebar.jsp"%>
+
+		<div class="m-5">
+			<h1>
+				Bem-vindo
+					<c:out value="${user.nomeMedico}" />
+				!!!
+			</h1>
+		</div>
+
+	</div>
 
 	<%@ include file="./includes/footer.jsp"%>
 

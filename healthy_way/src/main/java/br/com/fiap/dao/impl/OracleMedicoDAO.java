@@ -13,11 +13,10 @@ import br.com.fiap.exception.DBException;
 import br.com.fiap.model.Medico;
 import br.com.fiap.model.Usuario;
 
-public class OracleMedicoDAO implements MedicoDAO{
+public class OracleMedicoDAO implements MedicoDAO {
 
 	private Connection conexao;
 
-	
 	@Override
 	public void cadastrar(Medico medico) throws DBException {
 		PreparedStatement stmt = null;
@@ -46,7 +45,7 @@ public class OracleMedicoDAO implements MedicoDAO{
 				e.printStackTrace();
 			}
 		}
-		
+
 	}
 
 	@Override
@@ -77,7 +76,7 @@ public class OracleMedicoDAO implements MedicoDAO{
 				e.printStackTrace();
 			}
 		}
-		
+
 	}
 
 	@Override
@@ -103,7 +102,7 @@ public class OracleMedicoDAO implements MedicoDAO{
 				e.printStackTrace();
 			}
 		}
-		
+
 	}
 
 	@Override
@@ -129,7 +128,7 @@ public class OracleMedicoDAO implements MedicoDAO{
 				String estadoCrm = rs.getString("estado_crm");
 				String crm = rs.getString("crm");
 
-				medico = new Medico(nomeMedico, emailMedico,senhaMedico,estadoCrm,crm);
+				medico = new Medico(nomeMedico, emailMedico, senhaMedico, estadoCrm, crm);
 				medico.setIdMedico(codigoMedico);
 
 			}
@@ -161,8 +160,8 @@ public class OracleMedicoDAO implements MedicoDAO{
 			String sql = "SELECT * FROM medicos";
 			stmt = conexao.prepareStatement(sql);
 			rs = stmt.executeQuery();
-			while(rs.next()) {
-				
+			while (rs.next()) {
+
 				int codigoMedico = rs.getInt("id_medico");
 				String nomeMedico = rs.getString("nome_medico");
 				String emailMedico = rs.getString("email_medico");
@@ -170,9 +169,9 @@ public class OracleMedicoDAO implements MedicoDAO{
 				String estadoCrm = rs.getString("estado_crm");
 				String crm = rs.getString("crm");
 
-				Medico medico = new Medico(nomeMedico, emailMedico,senhaMedico,estadoCrm,crm);
+				Medico medico = new Medico(nomeMedico, emailMedico, senhaMedico, estadoCrm, crm);
 				medico.setIdMedico(codigoMedico);
-				
+
 				lista.add(medico);
 			}
 
@@ -231,7 +230,7 @@ public class OracleMedicoDAO implements MedicoDAO{
 				e.printStackTrace();
 			}
 		}
-		
+
 		return medico;
 	}
 
@@ -264,5 +263,45 @@ public class OracleMedicoDAO implements MedicoDAO{
 		return false;
 	}
 
+	public Medico buscarEmail(String email) {
+		Medico medico = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			conexao = ConnectionManager.getInstance().getConnection();
+			String sql = "SELECT * FROM medicos WHERE email_medico = ?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setString(1, email);
+
+			rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				int codigoMedico = rs.getInt("id_medico");
+				String nomeMedico = rs.getString("nome_medico");
+				String emailMedico = rs.getString("email_medico");
+
+				medico = new Medico();
+				medico.setIdMedico(codigoMedico);
+				medico.setNomeMedico(nomeMedico);
+				medico.setEmailMedico(emailMedico);
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return medico;
+	}
 
 }

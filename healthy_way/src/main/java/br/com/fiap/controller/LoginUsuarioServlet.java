@@ -19,10 +19,10 @@ import br.com.fiap.model.Usuario;
 @WebServlet("/loginUsuario")
 public class LoginUsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private UsuarioDAO dao;
 	private Usuario usuarioLogin = new Usuario();
-	
+
 	public LoginUsuarioServlet() {
 		super();
 		dao = DAOFactory.getUsuarioDAO();
@@ -30,34 +30,34 @@ public class LoginUsuarioServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		response.sendRedirect("loginUsuario.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-			
-			String email = request.getParameter("login-email");
-			String senha = request.getParameter("login-password");
-			
-			usuarioLogin.setEmailUsuario(email);
-			usuarioLogin.setSenhaUsuario(senha);
-			
-			Usuario usuario = dao.buscarEmail(email);
-			
-			
-			if (dao.validarUsuario(usuarioLogin)) {
-				HttpSession session = request.getSession();
-				session.setAttribute("user", usuario);
-				request.getRequestDispatcher("usuario.jsp").forward(request, response);
-			} else {
-				request.setAttribute("erro", "Usuário ou senha inválido");
-				request.getRequestDispatcher("loginUsuario.jsp").forward(request, response);
-			}
-			
-			
-			
+
+		HttpSession session = request.getSession();
+		session.setAttribute("user", null);
+
+		String email = request.getParameter("login-email");
+		String senha = request.getParameter("login-password");
+
+		usuarioLogin.setEmailUsuario(email);
+		usuarioLogin.setSenhaUsuario(senha);
+
+		Usuario usuario = dao.buscarEmail(email);
+
+		if (dao.validarUsuario(usuarioLogin)) {
+			session = request.getSession();
+			session.setAttribute("user", usuario);
+			request.getRequestDispatcher("usuario.jsp").forward(request, response);
+		} else {
+			request.setAttribute("erro", "Usuário ou senha inválido");
+			request.getRequestDispatcher("loginUsuario.jsp").forward(request, response);
+		}
+
 	}
 
 }

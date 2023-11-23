@@ -193,8 +193,6 @@ public class OracleConsultaDAO implements ConsultaDAO {
 				String nomeTecnologia = rs.getString("nome_tecnologia");
 				String descricaoTecnologia = rs.getString("descricao_tecnologia");
 
-				
-
 				Consulta consulta = new Consulta();
 				Medico medico = new Medico();
 				Tecnologia tecnologia = new Tecnologia();
@@ -224,6 +222,86 @@ public class OracleConsultaDAO implements ConsultaDAO {
 		}
 
 		return lista;
+	}
+
+	@Override
+	public List<Consulta> listarConsultasMedico(int idMedico) {
+		List<Consulta> lista = new ArrayList<Consulta>();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			conexao = ConnectionManager.getInstance().getConnection();
+			String sql = "SELECT * FROM consultas c JOIN usuarios u ON c.usuarios_id_usuario = u.id_usuario JOIN tecnologias t ON c.tecnologias_id_tecnologia = t.id_tecnologia WHERE medicos_id_medico = ?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setInt(1, idMedico);
+			
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+
+				int idConsulta = rs.getInt("id_consulta");
+				int situacao = rs.getInt("situacao");
+				String nomeUsuario = rs.getString("nome_usuario");
+				String nomeTecnologia = rs.getString("nome_tecnologia");
+				String descricaoTecnologia = rs.getString("descricao_tecnologia");
+
+				Consulta consulta = new Consulta();
+				Usuario usuario = new Usuario();
+				Tecnologia tecnologia = new Tecnologia();
+				
+				usuario.setNomeUsuario(nomeUsuario);
+				tecnologia.setNomeTecnologia(nomeTecnologia);
+				tecnologia.setDescricaoTecnologia(descricaoTecnologia);
+				
+				consulta.setUsuario(usuario);
+				consulta.setTecnologiaConsulta(tecnologia);
+				consulta.setIdConsulta(idConsulta);
+				consulta.setSituacao(situacao);
+				
+				lista.add(consulta);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return lista;
+	}
+
+	@Override
+	public void atender(int idConsulta) throws DBException {
+		PreparedStatement stmt = null;
+
+		try {
+			conexao = ConnectionManager.getInstance().getConnection();
+			String sql = "UPDATE consultas SET situacao = 1 WHERE id_consulta = ?";
+			stmt = conexao.prepareStatement(sql);
+
+			stmt.setInt(1, idConsulta);
+
+			stmt.execute();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DBException("Erro ao atualizar.");
+		} finally {
+			try {
+				stmt.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
 	}
 
 }

@@ -18,11 +18,11 @@ import br.com.fiap.model.Usuario;
 @WebServlet("/loginMedico")
 public class LoginMedicoServlet extends HttpServlet {
 
-private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1L;
+
 	private MedicoDAO dao;
 	private Medico medicoLogin = new Medico();
-	
+
 	public LoginMedicoServlet() {
 		super();
 		dao = DAOFactory.getMedicoDAO();
@@ -30,31 +30,34 @@ private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		response.sendRedirect("loginMedico.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-			
-			String email = request.getParameter("login-email");
-			String senha = request.getParameter("login-password");
-			
-			medicoLogin.setEmailMedico(email);
-			medicoLogin.setSenhaMedico(senha);
-		
 
-			if (dao.validarMedico(medicoLogin)) {
-				HttpSession session = request.getSession();
-				session.setAttribute("user", email);
-				request.getRequestDispatcher("medico.jsp").forward(request, response);
-			} else {
-				request.setAttribute("erro", "Usuário ou senha inválido");
-				request.getRequestDispatcher("loginMedico.jsp").forward(request, response);
-			}
-			
+		HttpSession session = request.getSession();
+		session.setAttribute("user", null);
+
+		String email = request.getParameter("login-email");
+		String senha = request.getParameter("login-password");
+
+		medicoLogin.setEmailMedico(email);
+		medicoLogin.setSenhaMedico(senha);
+
+		Medico medico = dao.buscarEmail(email);
 		
+		if (dao.validarMedico(medicoLogin)) {
+			session = request.getSession();
+			session.setAttribute("user", medico);
+			request.getRequestDispatcher("medico.jsp").forward(request, response);
+		} else {
+			request.setAttribute("erro", "Usuário ou senha inválido");
+			request.getRequestDispatcher("loginMedico.jsp").forward(request, response);
+		}
+
 	}
 
 }

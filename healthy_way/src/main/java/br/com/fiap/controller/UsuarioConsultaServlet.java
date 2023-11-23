@@ -72,9 +72,7 @@ public class UsuarioConsultaServlet extends HttpServlet {
 	}
 
 	private void listarUsuarioConsulta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("listando user consultas");
-		
+				
 		HttpSession session = request.getSession();
 		Usuario usuario = (Usuario) session.getAttribute("user");
 		List<Consulta> lista = daoConsulta.listarConsultas(usuario.getIdUsuario());

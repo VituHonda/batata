@@ -9,9 +9,12 @@ public interface ConsultaDAO {
 
 	void cadastrar(Consulta consulta) throws DBException;
 //	void atualizar(Consulta consulta) throws DBException; 
+	void atender(int idConsulta) throws DBException;
 	void remover(int id) throws DBException;
 	Consulta buscar(int id);
 	List<Consulta> listarConsultas(int idUsuario);
+	List<Consulta> listarConsultasMedico(int idMedico);
 	List<Consulta> listar();
+	
 	
 }
