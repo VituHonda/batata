@@ -40,28 +40,26 @@
 						<td>${t.usuario.nomeUsuario}</td>
 						<td>${t.tecnologiaConsulta.nomeTecnologia}</td>
 						<td>${t.tecnologiaConsulta.descricaoTecnologia}</td>
-						<td>
-						<c:if test="${t.situacao == 1}">
+						<td><c:if test="${t.situacao == 1}">
 							Atendido
-						</c:if>
-						<c:if test="${t.situacao == 0}">
+						</c:if> <c:if test="${t.situacao == 0}">
 							Nao Atendido
-						</c:if>
-						</td>
+						</c:if></td>
 
 
 						<td class="d-flex"><c:if test="${t.situacao == 0}">
-								<form action="consultas" method="post" class="ms-3">
+								<form action="medico-consulta" method="post" class="ms-3">
 									<input type="hidden" name="acao" value="atender"> <input
 										type="hidden" name="idMedicoConsulta" value="${t.idConsulta}">
 									<button type="submit" class="btn btn-danger btn-xs">Atender</button>
 								</form>
-							</c:if>
-							<form action="consultas" method="post" class="ms-3">
-								<input type="hidden" name="acao" value="excluir"> <input
-									type="hidden" name="idMedicoConsulta" value="${t.idConsulta}">
-								<button type="submit" class="btn btn-danger btn-xs">Desmarcar</button>
-							</form></td>
+
+								<form action="medico-consulta" method="post" class="ms-3">
+									<input type="hidden" name="acao" value="excluir"> <input
+										type="hidden" name="idMedicoConsulta" value="${t.idConsulta}">
+									<button type="submit" class="btn btn-danger btn-xs">Desmarcar</button>
+								</form></td>
+						</c:if>
 					</tr>
 				</c:forEach>
 			</table>

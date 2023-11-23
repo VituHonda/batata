@@ -34,6 +34,7 @@
 					<th>CRM</th>
 					<th>Nome Tecnologia</th>
 					<th>Descrição Tecnologia</th>
+					<th>Situação</th>
 
 				</tr>
 				<c:forEach items="${consultas}" var="t">
@@ -43,14 +44,19 @@
 						<td>${t.medico.crm}</td>
 						<td>${t.tecnologiaConsulta.nomeTecnologia}</td>
 						<td>${t.tecnologiaConsulta.descricaoTecnologia}</td>
+						<td><c:if test="${t.situacao == 1}">
+							Atendido
+						</c:if> <c:if test="${t.situacao == 0}">
+							Nao Atendido
+						</c:if></td>
 
-						<td class="d-flex">
-							<form action="consultas" method="post" class="ms-3">
-								<input type="hidden" name="acao" value="excluir"> <input
-									type="hidden" name="idUsuarioConsulta" value="${t.idConsulta}">
-								<button type="submit" class="btn btn-danger btn-xs">Desmarcar</button>
-							</form>
-						</td>
+						<td class="d-flex"><c:if test="${t.situacao == 0}">
+								<form action="usuario-consulta" method="post" class="ms-3">
+									<input type="hidden" name="acao" value="excluir"> <input
+										type="hidden" name="idUsuarioConsulta" value="${t.idConsulta}">
+									<button type="submit" class="btn btn-danger btn-xs">Desmarcar</button>
+								</form>
+							</c:if></td>
 					</tr>
 				</c:forEach>
 			</table>

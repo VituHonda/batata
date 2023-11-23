@@ -137,7 +137,7 @@ public class UsuarioConsultaServlet extends HttpServlet {
 				
 		try {
 			daoConsulta.remover(codigo);
-			request.setAttribute("msg", "Consulta removido!");
+			request.setAttribute("msg", "Consulta desmarcado!");
 		} catch (DBException e) {
 			e.printStackTrace();
 			request.setAttribute("erro", "Erro ao remover");

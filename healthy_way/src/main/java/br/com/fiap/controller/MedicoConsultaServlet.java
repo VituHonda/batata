@@ -61,7 +61,12 @@ public class MedicoConsultaServlet extends HttpServlet {
 			}
 			break;
 		case "atender":
-			atender(request, response);
+			try {
+				atender(request, response);
+			} catch (ServletException | IOException | DBException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break;
 		default:
 			break;
@@ -69,11 +74,13 @@ public class MedicoConsultaServlet extends HttpServlet {
 	}
 	
 
-	private void atender(HttpServletRequest request, HttpServletResponse response) {
-
+	private void atender(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, DBException {
 		
-		
-		
+		int idConsulta = Integer.parseInt(request.getParameter("idMedicoConsulta"));	
+		System.out.println(idConsulta);
+		daoConsulta.atender(idConsulta);
+		listarMedicoConsulta(request, response);
+		request.getRequestDispatcher("medico-consulta.jsp").forward(request, response);
 	}
 
 	private void listarMedicoConsulta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -92,7 +99,7 @@ public class MedicoConsultaServlet extends HttpServlet {
 				
 		try {
 			daoConsulta.remover(codigo);
-			request.setAttribute("msg", "Consulta removido!");
+			request.setAttribute("msg", "Consulta desmarcado!");
 		} catch (DBException e) {
 			e.printStackTrace();
 			request.setAttribute("erro", "Erro ao remover");

@@ -13,3 +13,4 @@ INSERT INTO tecnologias(nome_tecnologia, descricao_tecnologia) VALUES ('Presenci
 INSERT INTO dados_biometricos_usuario(id_dado_biometrico_usuario,tipo_sanguineo,convenio_medico,genero,usuarios_id_usuario) VALUES(1,'AB','NotreDame','M',141);
 INSERT INTO dados_biometricos_usuario(id_dado_biometrico_usuario,tipo_sanguineo,convenio_medico,genero,usuarios_id_usuario) VALUES(2,'AB','Santander','M',141);
 INSERT INTO dados_biometricos_usuario(id_dado_biometrico_usuario,tipo_sanguineo,convenio_medico,genero,usuarios_id_usuario) VALUES(3,'A','NotreDame','M',142);
+INSERT INTO dados_biometricos_usuario(id_dado_biometrico_usuario,tipo_sanguineo,convenio_medico,genero,usuarios_id_usuario) VALUES(3,'A','Santander','M',142);

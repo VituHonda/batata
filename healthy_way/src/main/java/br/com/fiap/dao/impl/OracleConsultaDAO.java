@@ -188,6 +188,7 @@ public class OracleConsultaDAO implements ConsultaDAO {
 			while (rs.next()) {
 
 				int idConsulta = rs.getInt("id_consulta");
+				int situacao = rs.getInt("situacao");
 				String nomeMedico = rs.getString("nome_medico");
 				String crm = rs.getString("crm");
 				String nomeTecnologia = rs.getString("nome_tecnologia");
@@ -205,6 +206,7 @@ public class OracleConsultaDAO implements ConsultaDAO {
 				consulta.setMedico(medico);
 				consulta.setTecnologiaConsulta(tecnologia);
 				consulta.setIdConsulta(idConsulta);
+				consulta.setSituacao(situacao);
 				
 				lista.add(consulta);
 			}

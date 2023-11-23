@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LoginUsuario</title>
+<title>Login Medico</title>
 <%@ include file="./includes/header.jsp"%>
 <style type="text/css">
 .custom-container {
