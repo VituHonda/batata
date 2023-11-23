@@ -27,11 +27,12 @@ public class OracleConsultaDAO implements ConsultaDAO {
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "INSERT INTO consultas(usuarios_id_usuario, medicos_id_medico, tecnologias_id_tecnologia) VALUES (?,?,?)";
+			String sql = "INSERT INTO consultas(usuarios_id_usuario, medicos_id_medico, tecnologias_id_tecnologia, situacao) VALUES (?,?,?,?)";
 			stmt = conexao.prepareStatement(sql);
-			stmt.setInt(2, consulta.getUsuario().getIdUsuario());
-			stmt.setInt(3, consulta.getMedico().getIdMedico());
-			stmt.setInt(4, consulta.getTecnologiaConsulta().getIdTecnologia());
+			stmt.setInt(1, consulta.getUsuario().getIdUsuario());
+			stmt.setInt(2, consulta.getMedico().getIdMedico());
+			stmt.setInt(3, consulta.getTecnologiaConsulta().getIdTecnologia());
+			stmt.setInt(4, consulta.getSituacao());
 
 			stmt.execute();
 
@@ -179,21 +180,34 @@ public class OracleConsultaDAO implements ConsultaDAO {
 		try {
 
 			conexao = ConnectionManager.getInstance().getConnection();
-			String sql = "SELECT * FROM consultas where usuarios_id_usuario = ?";
+			String sql = "SELECT * FROM consultas c JOIN medicos m ON c.medicos_id_medico = m.id_medico JOIN tecnologias t ON c.tecnologias_id_tecnologia = t.id_tecnologia WHERE usuarios_id_usuario = ?";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setInt(1, idUsuario);
 			
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 
-				
-				
+				int idConsulta = rs.getInt("id_consulta");
+				String nomeMedico = rs.getString("nome_medico");
+				String crm = rs.getString("crm");
+				String nomeTecnologia = rs.getString("nome_tecnologia");
+				String descricaoTecnologia = rs.getString("descricao_tecnologia");
 
 				
 
 				Consulta consulta = new Consulta();
-			
-
+				Medico medico = new Medico();
+				Tecnologia tecnologia = new Tecnologia();
+				
+				medico.setNomeMedico(nomeMedico);
+				medico.setCrm(crm);
+				tecnologia.setNomeTecnologia(nomeTecnologia);
+				tecnologia.setDescricaoTecnologia(descricaoTecnologia);
+				
+				consulta.setMedico(medico);
+				consulta.setTecnologiaConsulta(tecnologia);
+				consulta.setIdConsulta(idConsulta);
+				
 				lista.add(consulta);
 			}
 

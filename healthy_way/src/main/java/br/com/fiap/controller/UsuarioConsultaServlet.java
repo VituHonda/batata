@@ -47,6 +47,9 @@ public class UsuarioConsultaServlet extends HttpServlet {
 		case "cadastrar":
 			cadastrar(request, response);
 			break;
+		case "excluir":
+			excluir(request, response);
+			break;
 		default:
 			break;
 		}
@@ -60,30 +63,41 @@ public class UsuarioConsultaServlet extends HttpServlet {
 		case "abrirFormCadastro":
 			abrirFormCadastro(request, response);
 			break;
+		case "listarUsuarioConsulta":
+			listarUsuarioConsulta(request, response);
+			break;
 		default:
 			break;
 		}
 	}
 
+	private void listarUsuarioConsulta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("listando user consultas");
+		
+		HttpSession session = request.getSession();
+		Usuario usuario = (Usuario) session.getAttribute("user");
+		List<Consulta> lista = daoConsulta.listarConsultas(usuario.getIdUsuario());
+		request.setAttribute("consultas", lista);
+		request.getRequestDispatcher("usuario-consulta.jsp").forward(request, response);
+		
+	}
+
 	private void cadastrar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			
-			System.out.println("oiii");
-			
+						
 			HttpSession session = request.getSession();
 			Usuario usuario = (Usuario) session.getAttribute("user");
 			
 			Medico medico = new Medico();
-			int idMedico = (int) request.getAttribute("id-medico");
-			System.out.println(idMedico);
+			int idMedico = Integer.parseInt(request.getParameter("medico"));
 			medico.setIdMedico(idMedico);
 			
 			Tecnologia tecnologia = new Tecnologia();
-			int idTecnologia = (int) request.getAttribute("id-tecnologia");
-			System.out.println(idTecnologia);
+			int idTecnologia =Integer.parseInt(request.getParameter("tecnologia"));
 			tecnologia.setIdTecnologia(idTecnologia);
-
+			
 			Consulta consulta = new Consulta(usuario, medico, tecnologia);
 			consulta.setSituacao(0);
 			daoConsulta.cadastrar(consulta);
@@ -117,6 +131,23 @@ public class UsuarioConsultaServlet extends HttpServlet {
 		List<Tecnologia> lista = daoTecnologia.listar();
 		request.setAttribute("tecnologias", lista);
 		
+	}
+	
+	private void excluir(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int codigo = Integer.parseInt(request.getParameter("idUsuarioConsulta"));
+				
+		try {
+			daoConsulta.remover(codigo);
+			request.setAttribute("msg", "Consulta removido!");
+		} catch (DBException e) {
+			e.printStackTrace();
+			request.setAttribute("erro", "Erro ao remover");
+		}
+		
+		listarUsuarioConsulta(request, response);
+		
+		request.getRequestDispatcher("usuario-consulta.jsp").forward(request, response);
 	}
 
 }

@@ -19,7 +19,7 @@
 
 
 <div class="container">
-		<h1 class="mt-5">Dados Biometricos</h1>
+		<h1 class="mt-5">Consultas agendadas</h1>
 		<c:if test="${not empty msg }">
 			<div class="alert alert-success">${msg}</div>
 		</c:if>
@@ -28,24 +28,26 @@
 		</c:if>
 		<table class="table table-striped">
 			<tr>
-				<th>ID</th>
-				<th>Convenio</th>
-				<th>Tipo Sanguineo</th>
-				<th>Genero</th>
+				<th>Código</th>
+				<th>Nome Médico</th>
+				<th>CRM</th>
+				<th>Nome Tecnologia</th>
+				<th>Descrição Tecnologia</th>
 				
 			</tr>
-			<c:forEach items="${dados}" var="t">
+			<c:forEach items="${consultas}" var="t">
 				<tr>
-					<td>${t.idDadosBiometricosUsuario}</td>
-					<td>${t.convenioMedico}</td>
-					<td>${t.tipoSanguineo}</td>
-					<td>${t.genero}</td>
+					<td>${t.idConsulta}</td>
+					<td>${t.medico.nomeMedico}</td>
+					<td>${t.medico.crm}</td>
+					<td>${t.tecnologiaConsulta.nomeTecnologia}</td>
+					<td>${t.tecnologiaConsulta.descricaoTecnologia}</td>
 
 					<td class="d-flex">
-						<form action="dados" method="post" class="ms-3">
+						<form action="consultas" method="post" class="ms-3">
 							<input type="hidden" name="acao" value="excluir"> <input
-								type="hidden" name="idDadosBiometricosUsuario" value="${t.idDadosBiometricosUsuario}">
-							<button type="submit" class="btn btn-danger btn-xs">Excluir</button>
+								type="hidden" name="idUsuarioConsulta" value="${t.idConsulta}">
+							<button type="submit" class="btn btn-danger btn-xs">Desmarcar</button>
 						</form></td>
 				</tr>
 			</c:forEach>
