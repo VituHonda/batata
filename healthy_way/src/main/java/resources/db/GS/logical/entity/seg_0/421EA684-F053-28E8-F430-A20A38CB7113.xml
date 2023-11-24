@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="421EA684-F053-28E8-F430-A20A38CB7113" name="MEDICO_POR_CLINICA">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:31:46 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="data_inicio_contrato" id="4D23A113-AB10-43F2-175A-4A730D5E1496">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:34:09 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_final_contrato" id="90C4931B-3AF2-6DAE-0B56-5EF69083CC12">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:34:17 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_medico" id="A5AA72A8-3E64-1B7B-F4AC-1CD01921467C">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:40:57 UTC</createdTime>
+<generatorID>8F56AE39-CA96-54E3-6A47-A0CB9C97BF53</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<referedAttribute>09CC8090-B962-05F2-71A2-1659DC4F7233</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_clinica" id="F939B3C1-67D5-83CF-57F4-676F8B2F69F6">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:50:34 UTC</createdTime>
+<generatorID>70EBABEE-D68A-50C7-96D4-FD787749A204</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<referedAttribute>D0083B0C-1317-DE88-464E-266FF240B38E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D3FE4A34-ADBD-6FE8-F8A8-AB8AFC9D67E4" name="MEDICO_POR_CLINICA PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:51:00 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A5AA72A8-3E64-1B7B-F4AC-1CD01921467C</attributeRef>
+<attributeRef>F939B3C1-67D5-83CF-57F4-676F8B2F69F6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

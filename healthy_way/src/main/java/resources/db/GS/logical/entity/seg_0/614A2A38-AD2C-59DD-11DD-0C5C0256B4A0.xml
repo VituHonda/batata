@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="614A2A38-AD2C-59DD-11DD-0C5C0256B4A0" name="EXAME_POR_CONSULTA">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-11-14 10:37:19 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_exame" id="808D62F5-A7F5-B498-5D40-BE7CD8DB6631">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:40:38 UTC</createdTime>
+<generatorID>CA82697E-50AC-F808-2C20-51A52DDA7A5E</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<referedAttribute>A2771620-38E9-5068-7630-F7AD87C91F87</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_consulta" id="9C7B5D30-3A08-2303-E2DC-629C75657AC9">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:50:15 UTC</createdTime>
+<generatorID>046B48DC-BA53-A853-D488-15CBB05B70A7</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="true"/>
+</engineerTo>
+<referedAttribute>DC97BD12-6B3B-D1EB-9253-3A8DEDD3F247</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="ABDF3960-15FE-CEE9-F9DE-EA57980CC727" name="Key_1">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:47:30 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="false"/>
+</engineerTo>
+<newElementsIDs>BB9FDF5E-EE6A-4E95-AD9D-31FCC7C49B35,808D62F5-A7F5-B498-5D40-BE7CD8DB6631</newElementsIDs>
+<usedAttributes>
+<attributeRef>808D62F5-A7F5-B498-5D40-BE7CD8DB6631</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="49F5C0A1-10AB-1194-CD0B-D4C240C88F45" name="EXAME_POR_CONSULTA PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:48:03 UTC</createdTime>
+<ownerDesignName>GS</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A3C57BFF-D62F-F5E8-93D9-5A64D03D13B4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>808D62F5-A7F5-B498-5D40-BE7CD8DB6631</attributeRef>
+<attributeRef>9C7B5D30-3A08-2303-E2DC-629C75657AC9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

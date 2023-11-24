@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8866B506-EC81-AAB5-41B0-A8955B8EAD3B" name="EXAME_POR_CONSULTA">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>614A2A38-AD2C-59DD-11DD-0C5C0256B4A0</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EXAMES_id_exame" id="916D1371-1846-189F-946C-15ABDB99FBAA">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>808D62F5-A7F5-B498-5D40-BE7CD8DB6631</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7ACDFCB9-203D-CE03-7EA3-6FEFE550AB8B" referredColumn="6BDBD2C8-BB63-5E1D-FA18-BFD52F6FB990"/>
+</associations>
+</Column>
+<Column name="CONSULTAS_id_consulta" id="28F0AF2B-E4CA-EDC7-7F50-9541E3D12A23">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>9C7B5D30-3A08-2303-E2DC-629C75657AC9</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9FE89F7B-5925-E329-3209-888C37573719" referredColumn="54EDD637-9F18-22AA-9510-2D1CF85128A3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="24798B4D-B198-BAE0-8CA6-FB4C3C6D4D91" name="EXAME_POR_CONSULTA_PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>49F5C0A1-10AB-1194-CD0B-D4C240C88F45</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="916D1371-1846-189F-946C-15ABDB99FBAA"/>
+<colUsage columnID="28F0AF2B-E4CA-EDC7-7F50-9541E3D12A23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="29D873D0-0795-22C3-9CE8-480620893212" name="EXAME_POR_CONSULTA_id_exame_UN">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>ABDF3960-15FE-CEE9-F9DE-EA57980CC727</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="916D1371-1846-189F-946C-15ABDB99FBAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05283C3B-3AA9-158F-C2BE-FA0CC7B2EDC6" name="EXAME_POR_CONSULTA_EXAMES_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>CA82697E-50AC-F808-2C20-51A52DDA7A5E</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="916D1371-1846-189F-946C-15ABDB99FBAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B69FC4F1-95C5-80CF-41DC-53386D0CE53B" name="EXAME_POR_CONSULTA_CONSULTAS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>046B48DC-BA53-A853-D488-15CBB05B70A7</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28F0AF2B-E4CA-EDC7-7F50-9541E3D12A23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

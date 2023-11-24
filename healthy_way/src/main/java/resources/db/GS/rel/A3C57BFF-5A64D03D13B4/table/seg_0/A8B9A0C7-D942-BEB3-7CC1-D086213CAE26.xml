@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A8B9A0C7-D942-BEB3-7CC1-D086213CAE26" name="MEDICO_POR_CLINICA">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>421EA684-F053-28E8-F430-A20A38CB7113</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="data_inicio_contrato" id="EBAB8551-EEE3-7528-542F-2703CDB4FCCC">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>4D23A113-AB10-43F2-175A-4A730D5E1496</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_final_contrato" id="2B0193A3-479A-765E-5204-6801FFEB9BA8">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>90C4931B-3AF2-6DAE-0B56-5EF69083CC12</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEDICOS_id_medico" id="92B7CFC4-3F10-2B63-D57E-D046428FF7C4">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>A5AA72A8-3E64-1B7B-F4AC-1CD01921467C</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AF059C9C-0AFD-0790-438A-8E14F95D0F5C" referredColumn="1EEE5CB0-BE3E-EA8D-9B68-C377F9CEE407"/>
+</associations>
+</Column>
+<Column name="CLINICAS_id_clinica" id="C4B6A78F-3F66-A4DD-005C-7E579B1CF9AE">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>F939B3C1-67D5-83CF-57F4-676F8B2F69F6</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D6E30386-2D2A-1FA5-5C87-CF48515CDB81" referredColumn="4CA754E6-C724-B7D1-C680-4B71AE8F6912"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="741A6F3F-E48B-4AC5-A638-B36F6CD196D5" name="MEDICO_POR_CLINICA_PK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:52:20 UTC</createdTime>
+<generatorID>D3FE4A34-ADBD-6FE8-F8A8-AB8AFC9D67E4</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92B7CFC4-3F10-2B63-D57E-D046428FF7C4"/>
+<colUsage columnID="C4B6A78F-3F66-A4DD-005C-7E579B1CF9AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="00162497-E9AB-7EBB-5B6B-CCEEC28A0DBC" name="MEDICO_POR_CLINICA_MEDICOS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>8F56AE39-CA96-54E3-6A47-A0CB9C97BF53</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92B7CFC4-3F10-2B63-D57E-D046428FF7C4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F5FFCEE2-7BFB-3F53-B78D-5B4E92563A32" name="MEDICO_POR_CLINICA_CLINICAS_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>70EBABEE-D68A-50C7-96D4-FD787749A204</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4B6A78F-3F66-A4DD-005C-7E579B1CF9AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7ACDFCB9-203D-CE03-7EA3-6FEFE550AB8B" containerWithKeyObject="8866B506-EC81-AAB5-41B0-A8955B8EAD3B" localFKIndex="05283C3B-3AA9-158F-C2BE-FA0CC7B2EDC6" name="EXAME_POR_CONSULTA_EXAMES_FK">
+<createdBy>viuta</createdBy>
+<createdTime>2023-11-14 19:57:59 UTC</createdTime>
+<generatorID>CA82697E-50AC-F808-2C20-51A52DDA7A5E</generatorID>
+<ownerDesignName>GS</ownerDesignName>
+<referredTableLongName>EXAMES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CB11D18D-C0D6-C8AE-32D6-0EF7408C7697</referredTableID>
+<keyObject>1272FFE6-3F9D-211D-0137-72CD1101F6BE</keyObject>
+<referredKeyID>1272FFE6-3F9D-211D-0137-72CD1101F6BE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_exame</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
